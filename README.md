@@ -104,6 +104,7 @@ module.exports = function(defaults) {
       except: ['filter-by']
     }
   });
+}
 ```
 
 Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
