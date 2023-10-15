@@ -1,5 +1,5 @@
 import { resolve, Promise } from 'rsvp';
-import isPromise from 'ember-composable-helpers/utils/is-promise';
+import isPromise from 'ember-composable-helpers/src/utils/is-promise';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | is promise', function() {
