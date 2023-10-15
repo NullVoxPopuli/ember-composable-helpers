@@ -381,13 +381,13 @@ You can also pass an action as third argument:
 Returns the first entry matching the given value.
 
 ```hbs
-{{#with (find-by 'name' lookupName people) as |person|}}
+{{#let (find-by 'name' lookupName people) as |person|}}
   {{#if person}}
     {{#link-to 'person' person}}
       Click here to see {{person.name}}'s details
     {{/link-to}}
   {{/if}}
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)**
@@ -744,14 +744,14 @@ Returns an object where the keys are the unique values of the given property, an
 Returns an array of keys of given object.
 
 ```hbs
-{{#with (keys fields) as |labels|}}
+{{#let (keys fields) as |labels|}}
   <h3>This article contain {{labels.length}} fields</h3>
   <ul>
     {{#each labels as |label|}}
       <li>{{label}}</li>
     {{/each}}
   </ul>
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)**
@@ -781,14 +781,14 @@ It also supports an optional second argument to make common usage more ergonomic
 Returns an array of values from the given object.
 
 ```hbs
-{{#with (values fields) as |data|}}
+{{#let (values fields) as |data|}}
   <h3>This article contain {{data.length}} fields</h3>
   <ul>
     {{#each data as |datum|}}
       <li>{{datum}}</li>
     {{/each}}
   </ul>
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)*

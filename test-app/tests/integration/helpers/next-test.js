@@ -19,9 +19,9 @@ module('Integration | Helper | {{next}}', function(hooks) {
     this.set('useDeepEqual', true);
 
     await render(hbs`
-      {{~#with (next this.value this.useDeepEqual this.array) as |item|~}}
+      {{~#let (next this.value this.useDeepEqual this.array) as |item|~}}
         {{~item.name~}}
-      {{~/with~}}
+      {{~/let~}}
     `);
 
     assert.dom().hasText('c', 'c is shown');
@@ -33,9 +33,9 @@ module('Integration | Helper | {{next}}', function(hooks) {
     this.set('value', 'lemon');
 
     await render(hbs`
-      {{~#with (next this.value this.array) as |item|~}}
+      {{~#let (next this.value this.array) as |item|~}}
         {{~item~}}
-      {{~/with~}}
+      {{~/let~}}
     `);
 
     assert.dom().hasText('kiwi', 'kiwi is shown');
@@ -45,9 +45,9 @@ module('Integration | Helper | {{next}}', function(hooks) {
     this.set('array', emberArray([1, 2, 3]));
 
     await render(hbs`
-      {{~#with (next 1 this.array) as |item|~}}
+      {{~#let (next 1 this.array) as |item|~}}
         {{~item~}}
-      {{~/with~}}
+      {{~/let~}}
     `);
 
     assert.dom().hasText('2', '2 is shown');
@@ -73,9 +73,9 @@ module('Integration | Helper | {{next}}', function(hooks) {
     this.set('currentPet', person.get('pets.firstObject'));
 
     await render(hbs`
-      {{~#with (next this.currentPet this.pets) as |pet|~}}
+      {{~#let (next this.currentPet this.pets) as |pet|~}}
         {{~pet.name~}}
-      {{~/with~}}
+      {{~/let~}}
     `);
 
     assert.dom().hasText('Jake', 'the next pet name is shown');
