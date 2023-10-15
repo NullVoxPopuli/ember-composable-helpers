@@ -1,0 +1,79 @@
+{
+  "name": "ember-composable-helpers",
+  "version": "5.0.0",
+  "description": "Composable helpers for Ember",
+  "scripts": {
+    "build": "rollup --config",
+    "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
+    "node-test": "mocha test --recursive --reporter spec",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "test:all": "ember try:each"
+  },
+  "bugs": "https://github.com/DockYard/ember-composable-helpers/issues",
+  "homepage": "https://github.com/DockYard/ember-composable-helpers",
+  "engines": {
+    "node": "12.* || 14.* || >= 16"
+  },
+  "contributors": [
+    "Lauren Tan <arr@sugarpirate.com>",
+    "Marten Schilstra <mail@martenschilstra.nl>"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.22.15",
+    "@babel/plugin-transform-class-properties": "^7.22.5",
+    "@babel/runtime": "^7.22.15",
+    "@embroider/addon-dev": "^4.1.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "concurrently": "^8.2.1",
+    "rollup": "^3.29.1",
+    "rollup-plugin-copy": "^3.5.0"
+  },
+  "keywords": [
+    "ember-addon",
+    "helpers",
+    "compose",
+    "group-by",
+    "map-by",
+    "filter-by",
+    "sort-by",
+    "take",
+    "drop",
+    "compute"
+  ],
+  "repository": "https://github.com/DockYard/ember-composable-helpers",
+  "license": "MIT",
+  "author": "Dockyard <oss@dockyard.com>",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@embroider/addon-shim": "^1.8.6",
+    "broccoli-funnel": "2.0.1",
+    "resolve": "^1.10.0"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "app-js": {},
+    "main": "addon-main.cjs",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "files": [
+    "addon-main.cjs",
+    "dist"
+  ]
+}
