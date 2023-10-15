@@ -33,14 +33,14 @@ module.exports = {
         'blueprints/*/index.js',
         'config/**/*.js',
         'lib/**/*',
-        'tests/dummy/config/**/*.js',
+        'tests/**/config/**/*.js',
         'test/**/*'
       ],
       excludedFiles: [
         'addon/**',
         'addon-test-support/**',
         'app/**',
-        'tests/dummy/app/**'
+        'tests/**/app/**'
       ],
       parserOptions: {
         sourceType: 'script'
