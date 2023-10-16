@@ -36,6 +36,7 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run test
+      working-directory: ./test-app
 
   ember-try:
     name: "Ember Try"
@@ -65,4 +66,3 @@ jobs:
       - run: npm install
       - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
         timeout-minutes: 10
-        working-directory: ./test-app
