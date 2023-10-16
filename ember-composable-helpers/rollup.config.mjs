@@ -15,12 +15,21 @@ export default {
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints(['-private/closure-action.js', '-private/get-value-array-and-use-deep-equal-from-params.js', 'helpers/append.js', 'helpers/call.js', 'helpers/chunk.js', 'helpers/compact.js', 'helpers/compute.js', 'helpers/dec.js', 'helpers/drop.js', 'helpers/entries.js', 'helpers/filter-by.js', 'helpers/filter.js', 'helpers/find-by.js', 'helpers/flatten.js', 'helpers/from-entries.js', 'helpers/group-by.js', 'helpers/has-next.js', 'helpers/has-previous.js', 'helpers/inc.js', 'helpers/includes.js', 'helpers/intersect.js', 'helpers/invoke.js', 'helpers/join.js', 'helpers/keys.js', 'helpers/map-by.js', 'helpers/map.js', 'helpers/next.js', 'helpers/noop.js', 'helpers/object-at.js', 'helpers/optional.js', 'helpers/pick.js', 'helpers/pipe-action.js', 'helpers/pipe.js', 'helpers/previous.js', 'helpers/queue.js', 'helpers/range.js', 'helpers/reduce.js', 'helpers/reject-by.js', 'helpers/repeat.js', 'helpers/reverse.js', 'helpers/shuffle.js', 'helpers/slice.js', 'helpers/sort-by.js', 'helpers/take.js', 'helpers/toggle-action.js', 'helpers/toggle.js', 'helpers/union.js', 'helpers/values.js', 'helpers/without.js', 'index.js', 'utils/as-array.js', 'utils/comparison.js', 'utils/get-index.js', 'utils/is-equal.js', 'utils/is-object.js', 'utils/is-promise.js']),
+    addon.publicEntrypoints([
+      '-private/closure-action.js',
+      '-private/get-value-array-and-use-deep-equal-from-params.js',
+      'helpers/**/*.js',
+      'index.js',
+      'utils/**/*.js',
+    ]),
 
     // These are the modules that should get reexported into the traditional
-    // "app" tree. Things in here should also be in publicEntrypoints above, but
+    // 'app' tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
-    addon.appReexports(['helpers/append.js', 'helpers/call.js', 'helpers/chunk.js', 'helpers/compact.js', 'helpers/compute.js', 'helpers/dec.js', 'helpers/drop.js', 'helpers/entries.js', 'helpers/filter-by.js', 'helpers/filter.js', 'helpers/find-by.js', 'helpers/flatten.js', 'helpers/from-entries.js', 'helpers/group-by.js', 'helpers/has-next.js', 'helpers/has-previous.js', 'helpers/inc.js', 'helpers/includes.js', 'helpers/intersect.js', 'helpers/invoke.js', 'helpers/join.js', 'helpers/keys.js', 'helpers/map-by.js', 'helpers/map.js', 'helpers/next.js', 'helpers/noop.js', 'helpers/object-at.js', 'helpers/optional.js', 'helpers/pick.js', 'helpers/pipe-action.js', 'helpers/pipe.js', 'helpers/previous.js', 'helpers/queue.js', 'helpers/range.js', 'helpers/reduce.js', 'helpers/reject-by.js', 'helpers/repeat.js', 'helpers/reverse.js', 'helpers/shuffle.js', 'helpers/slice.js', 'helpers/sort-by.js', 'helpers/take.js', 'helpers/toggle-action.js', 'helpers/toggle.js', 'helpers/union.js', 'helpers/values.js', 'helpers/without.js']),
+    addon.appReexports([
+      'helpers/**/*.js',
+      'utils/**/*.js',
+    ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
     // `dependencies` and `peerDependencies` as well as standard Ember-provided
