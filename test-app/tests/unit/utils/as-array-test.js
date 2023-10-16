@@ -1,4 +1,4 @@
-import asArray from 'ember-composable-helpers/src/utils/as-array';
+import asArray from 'ember-composable-helpers/utils/as-array';
 import { module, test } from 'qunit';
 import EmberObject from '@ember/object';
 

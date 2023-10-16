@@ -1,5 +1,5 @@
 import EmberObject from '@ember/object';
-import getIndex from 'ember-composable-helpers/src/utils/get-index';
+import getIndex from 'ember-composable-helpers/utils/get-index';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | get index', function() {

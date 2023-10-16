@@ -1,5 +1,5 @@
 import EmberObject from '@ember/object';
-import isEqual from 'ember-composable-helpers/src/utils/is-equal';
+import isEqual from 'ember-composable-helpers/utils/is-equal';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | is equal', function() {
