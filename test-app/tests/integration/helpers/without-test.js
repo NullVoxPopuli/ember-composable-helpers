@@ -92,7 +92,7 @@ module('Integration | Helper | {{without}}', function(hooks) {
       this.set('allPets', store.peekAll('pet'));
     });
 
-    await this.render(hbs`
+    await render(hbs`
       {{~#each (without this.person.pets this.allPets) as |pet|~}}
         {{~pet.name~}}
       {{~/each~}}
