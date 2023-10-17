@@ -3,6 +3,7 @@
 
 **[ember-composable-helpers is built and maintained by DockYard, contact us for expert Ember.js consulting](https://dockyard.com/ember-consulting)**.
 
+
 Composable helpers for Ember that enables more declarative templating. These helpers can be _composed_ together to form powerful ideas:
 
 ```hbs
@@ -16,16 +17,10 @@ Composable helpers for Ember that enables more declarative templating. These hel
 
 To install:
 
-**Ember 3.13+:**
+**Ember 3.4+:**
 
 ```no-highlight
 ember install ember-composable-helpers
-```
-
-**Ember 3.12 and below:**
-
-```no-highlight
-ember install ember-composable-helpers@^2.4.0
 ```
 
 Watch a free video overview presented by EmberMap:
@@ -35,6 +30,7 @@ Watch a free video overview presented by EmberMap:
 </a>
 
 ## Table of Contents
+  - [Compatability](#compatibility)
   - [Configuration](#configuration)
   - [Argument ordering](#argument-ordering)
   - [Upgrade Guide](#upgrade-guide)
@@ -92,6 +88,13 @@ Watch a free video overview presented by EmberMap:
     - [See also:](#see-also)
   - [Legal](#legal)
   - [Contributors](#contributors)
+
+## Compatibility
+------------------------------------------------------------------------------
+
+* Ember-source 3.4 or above & Ember-cli 3.4 or above
+* Embroider or ember-auto-import v2
+
 
 ## Configuration
 If you don't need all the helpers, you can specify which to include or remove from your build using `only` or `except` within your `ember-cli-build.js`:
