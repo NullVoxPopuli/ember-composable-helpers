@@ -3,6 +3,7 @@
 
 **[ember-composable-helpers is built and maintained by DockYard, contact us for expert Ember.js consulting](https://dockyard.com/ember-consulting)**.
 
+
 Composable helpers for Ember that enables more declarative templating. These helpers can be _composed_ together to form powerful ideas:
 
 ```hbs
@@ -16,16 +17,10 @@ Composable helpers for Ember that enables more declarative templating. These hel
 
 To install:
 
-**Ember 3.13+:**
+**Ember 3.4+:**
 
 ```no-highlight
 ember install ember-composable-helpers
-```
-
-**Ember 3.12 and below:**
-
-```no-highlight
-ember install ember-composable-helpers@^2.4.0
 ```
 
 Watch a free video overview presented by EmberMap:
@@ -35,6 +30,7 @@ Watch a free video overview presented by EmberMap:
 </a>
 
 ## Table of Contents
+  - [Compatability](#compatibility)
   - [Configuration](#configuration)
   - [Argument ordering](#argument-ordering)
   - [Upgrade Guide](#upgrade-guide)
@@ -93,6 +89,13 @@ Watch a free video overview presented by EmberMap:
   - [Legal](#legal)
   - [Contributors](#contributors)
 
+## Compatibility
+------------------------------------------------------------------------------
+
+* Ember-source 3.4 or above & Ember-cli 3.4 or above
+* Embroider or ember-auto-import v2
+
+
 ## Configuration
 If you don't need all the helpers, you can specify which to include or remove from your build using `only` or `except` within your `ember-cli-build.js`:
 
@@ -104,6 +107,7 @@ module.exports = function(defaults) {
       except: ['filter-by']
     }
   });
+}
 ```
 
 Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
@@ -381,13 +385,13 @@ You can also pass an action as third argument:
 Returns the first entry matching the given value.
 
 ```hbs
-{{#with (find-by 'name' lookupName people) as |person|}}
+{{#let (find-by 'name' lookupName people) as |person|}}
   {{#if person}}
     {{#link-to 'person' person}}
       Click here to see {{person.name}}'s details
     {{/link-to}}
   {{/if}}
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)**
@@ -744,14 +748,14 @@ Returns an object where the keys are the unique values of the given property, an
 Returns an array of keys of given object.
 
 ```hbs
-{{#with (keys fields) as |labels|}}
+{{#let (keys fields) as |labels|}}
   <h3>This article contain {{labels.length}} fields</h3>
   <ul>
     {{#each labels as |label|}}
       <li>{{label}}</li>
     {{/each}}
   </ul>
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)**
@@ -781,14 +785,14 @@ It also supports an optional second argument to make common usage more ergonomic
 Returns an array of values from the given object.
 
 ```hbs
-{{#with (values fields) as |data|}}
+{{#let (values fields) as |data|}}
   <h3>This article contain {{data.length}} fields</h3>
   <ul>
     {{#each data as |datum|}}
       <li>{{datum}}</li>
     {{/each}}
   </ul>
-{{/with}}
+{{/let}}
 ```
 
 **[⬆️ back to top](#table-of-contents)*

@@ -36,6 +36,7 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run test
+      working-directory: ./test-app
 
   ember-try:
     name: "Ember Try"
