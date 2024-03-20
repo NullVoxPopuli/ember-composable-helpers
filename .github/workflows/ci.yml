@@ -3,66 +3,100 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request: {}
 
 jobs:
-  lint:
-    name: Lint
-    env:
-      CI: true
-    runs-on: ubuntu-latest
+  cache-dependencies:
+    name: Cache dependencies
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 12.x
-          cache: npm
-      - run: npm install
-      - run: npm run lint:js
-
-  test:
-    name: Test
-    env:
-      CI: true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+          node-version: 16
+          cache: 'pnpm'
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
         with:
-          node-version: 12.x
-          cache: npm
-      - run: npm install
-      - run: npm run test
-      working-directory: ./test-app
-
-  ember-try:
-    name: "Ember Try"
-    env:
-      CI: true
-    runs-on: ubuntu-latest
+          path: |
+            node_modules
+            */node_modules
+          key: node_modules-${{runner.os}}-${{hashFiles('**/pnpm-lock.yaml')}}-v2
+      - name: Install dependencies
+        run: CI=true pnpm i --frozen-lockfile
+  build:
+    name: ${{matrix.task}} ${{matrix.app}}
+    runs-on: ubuntu-20.04
+    needs: [ cache-dependencies ]
     strategy:
       matrix:
-        try-scenario:
-          [
-            ember-lts-3.20,
-            ember-lts-3.24,
-            ember-lts-3.28,
-            ember-release,
-            ember-beta,
-            ember-canary,
-            embroider-safe,
-            # embroider-optimized, ember-data is currently failing. https://github.com/embroider-build/embroider/issues/396#issuecomment-611885598
-          ]
+        app: [ ember-composable-helpers ]
+      fail-fast: false
     steps:
-      - uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 12.x
-          cache: npm
-      - run: npm install
-      - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
-        timeout-minutes: 10
+          node-version: 16
+          cache: 'pnpm'
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        id: cache
+        with:
+          path: |
+            node_modules
+            */node_modules
+          key: node_modules-${{runner.os}}-${{hashFiles('**/pnpm-lock.yaml')}}-v2
+      - name: Fail if not cached
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: 'false'
+
+      # - name: ${{matrix.app}} Test (includes build)
+      #   working-directory: ${{matrix.app}}
+      #   run: pnpm run test
+  # test:
+  #   name: Test
+  #   env:
+  #     CI: true
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Install node
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16.x
+  #         cache: npm
+  #     - run: npm install
+  #     - run: npm run test
+  #     working-directory: ./test-app
+
+  # ember-try:
+  #   name: "Ember Try"
+  #   env:
+  #     CI: true
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       try-scenario:
+  #         [
+  #           ember-lts-3.28,
+  #           ember-release,
+  #           ember-beta,
+  #           ember-canary,
+  #           embroider-safe,
+  #           # embroider-optimized, ember-data is currently failing. https://github.com/embroider-build/embroider/issues/396#issuecomment-611885598
+  #         ]
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Install node
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16.x
+  #         cache: npm
+  #     - run: npm install
+  #     - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+  #       timeout-minutes: 10

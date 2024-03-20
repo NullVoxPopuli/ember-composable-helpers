@@ -17,7 +17,7 @@ Composable helpers for Ember that enables more declarative templating. These hel
 
 To install:
 
-**Ember 3.4+:**
+**Ember 3.28+:**
 
 ```no-highlight
 ember install ember-composable-helpers

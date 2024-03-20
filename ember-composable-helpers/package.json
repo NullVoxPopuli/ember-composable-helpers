@@ -16,7 +16,7 @@
   "bugs": "https://github.com/DockYard/ember-composable-helpers/issues",
   "homepage": "https://github.com/DockYard/ember-composable-helpers",
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": ">= 16"
   },
   "contributors": [
     "Lauren Tan <arr@sugarpirate.com>",
@@ -122,13 +122,12 @@
       "./helpers/union.js": "./dist/_app_/helpers/union.js",
       "./helpers/values.js": "./dist/_app_/helpers/values.js",
       "./helpers/without.js": "./dist/_app_/helpers/without.js",
-      ".utils/as-array.js" : "./dist/_app_/utils/utils/as-array.js",
-      ".utils/get-index.js" : "./dist/_app_/utils/utils/get-index.js",
-      ".utils/is-equal.js" : "./dist/_app_/utils/utils/is-equal.js",
-      ".utils/is-object.js" : "./dist/_app_/utils/utils/is-object.js",
-      ".utils/is-promise.js" : "./dist/_app_/utils/utils/is-promise.js",
-      ".-private/closure-action.js": "./dist/_app_/-private/closure-action.js",
-      ".-private/get-value-array-and-use-deep-equal-from-params.js": "./dist/_app_/-private/get-value-array-and-use-deep-equal-from-params.js"
+      "./utils/as-array.js": "./dist/_app_/utils/as-array.js",
+      "./utils/comparison.js": "./dist/_app_/utils/comparison.js",
+      "./utils/get-index.js": "./dist/_app_/utils/get-index.js",
+      "./utils/is-equal.js": "./dist/_app_/utils/is-equal.js",
+      "./utils/is-object.js": "./dist/_app_/utils/is-object.js",
+      "./utils/is-promise.js": "./dist/_app_/utils/is-promise.js"
     }
   }
 }
