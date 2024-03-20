@@ -92,9 +92,9 @@ Watch a free video overview presented by EmberMap:
 ## Compatibility
 ------------------------------------------------------------------------------
 
-* Ember-source 3.4 or above & Ember-cli 3.4 or above
-* Embroider or ember-auto-import v2
-
+* [ember-source][gh-ember-source] v3.28+
+* [typescript][gh-typescript] v4.8+
+* [ember-auto-import][gh-ember-auto-import] v2+
 
 ## Configuration
 If you don't need all the helpers, you can specify which to include or remove from your build using `only` or `except` within your `ember-cli-build.js`:
