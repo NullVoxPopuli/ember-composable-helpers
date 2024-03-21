@@ -1,4 +1,4 @@
-import { chunk } from 'test-app/helpers/chunk';
+import { chunk } from 'ember-composable-helpers/helpers/chunk';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | chunk', function() {

@@ -1,6 +1,5 @@
 {
   "name": "workspace-root",
-  "version": "5.0.0",
   "private": true,
   "repository": "",
   "license": "MIT",
@@ -14,13 +13,12 @@
     "start:test-app": "pnpm filter --workspace start test-app",
     "test": "pnpm --workspaces --if-present test"
   },
-  "packageManager": "pnpm@8.14.1",
-  "engines": {
-    "node": ">= 18.*",
-    "npm": "use pnpm",
-    "yarn": "use pnpm"
-  },
+  "packageManager": "pnpm@9.0.6",
   "devDependencies": {
     "concurrently": "^8.2.1"
+  },
+  "volta": {
+    "node": "20.12.2",
+    "pnpm": "9.0.6"
   }
 }
