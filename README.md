@@ -1,15 +1,13 @@
 # ember-composable-helpers
-![Download count all time](https://img.shields.io/npm/dt/ember-composable-helpers.svg) [![CircleCI](https://circleci.com/gh/DockYard/ember-composable-helpers.svg?style=shield)](https://circleci.com/gh/DockYard/ember-composable-helpers) [![npm version](https://badge.fury.io/js/ember-composable-helpers.svg)](https://badge.fury.io/js/ember-composable-helpers) [![Ember Observer Score](http://emberobserver.com/badges/ember-composable-helpers.svg)](http://emberobserver.com/addons/ember-composable-helpers)
 
-**[ember-composable-helpers is built and maintained by DockYard, contact us for expert Ember.js consulting](https://dockyard.com/ember-consulting)**.
+A modern fork of the original utility library.
 
 
-Composable helpers for Ember that enables more declarative templating. These helpers can be _composed_ together to form powerful ideas:
-
+example:
 ```hbs
 {{#each (map-by "fullName" users) as |fullName|}}
   <input type="text" value={{fullName}} onchange={{action (mut newName)}}>
-  <button {{action (pipe updateFullName saveUser) newName}}>
+  <button {{on 'click' (pipe updateFullName saveUser) newName}}>
     Update and save {{fullName}} to {{newName}}
   </button>
 {{/each}}
@@ -148,7 +146,7 @@ This way the arguments are better readable if you compose together multiple help
 For action helpers, this will mean better currying semantics:
 
 ```hbs
-<button {{action (pipe (action "closePopover") (toggle "isExpanded")) this}}>
+<button {{on 'click' (pipe (action "closePopover") (toggle "isExpanded")) this}}>
   {{if isExpanded "I am expanded" "I am not"}}
 </button>
 ```
@@ -849,14 +847,6 @@ String helpers were extracted to the [ember-cli-string-helpers](https://github.c
 * [ember-math-helpers](https://github.com/shipshapecode/ember-math-helpers)
 * [ember-cli-string-helpers](https://github.com/romulomachado/ember-cli-string-helpers)
 
-## Legal
-
-[DockYard](http://dockyard.com/ember-consulting), Inc &copy; 2016
-
-[@dockyard](http://twitter.com/dockyard)
-
-[Licensed under the MIT license](http://www.opensource.org/licenses/mit-license.php)
-
 ## Contributors
 
 We're grateful to these wonderful contributors who've contributed to `ember-composable-helpers`:
@@ -865,7 +855,6 @@ We're grateful to these wonderful contributors who've contributed to `ember-comp
 <a href="https://github.com/poteto"><img src="https://avatars0.githubusercontent.com/u/1390709?v=4" title="poteto" width="80" height="80"></a>
 <a href="https://github.com/martndemus"><img src="https://avatars2.githubusercontent.com/u/903637?v=4" title="martndemus" width="80" height="80"></a>
 <a href="https://github.com/snewcomer"><img src="https://avatars0.githubusercontent.com/u/7374640?v=4" title="snewcomer" width="80" height="80"></a>
-<a href="https://github.com/marten-dockyard"><img src="https://avatars0.githubusercontent.com/u/40497337?v=4" title="marten-dockyard" width="80" height="80"></a>
 <a href="https://github.com/romulomachado"><img src="https://avatars0.githubusercontent.com/u/266400?v=4" title="romulomachado" width="80" height="80"></a>
 <a href="https://github.com/cibernox"><img src="https://avatars2.githubusercontent.com/u/265339?v=4" title="cibernox" width="80" height="80"></a>
 <a href="https://github.com/vikram7"><img src="https://avatars0.githubusercontent.com/u/7072744?v=4" title="vikram7" width="80" height="80"></a>
