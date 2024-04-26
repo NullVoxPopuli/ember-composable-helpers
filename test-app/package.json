@@ -76,7 +76,6 @@
   ],
   "repository": "https://github.com/DockYard/ember-composable-helpers",
   "license": "MIT",
-  "author": "Dockyard <oss@dockyard.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
