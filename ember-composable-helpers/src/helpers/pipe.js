@@ -1,5 +1,5 @@
-import { helper } from '@ember/component/helper';
-import isPromise from '../utils/is-promise';
+import { helper } from "@ember/component/helper";
+import isPromise from "../utils/is-promise";
 
 export function invokeFunction(acc, curr) {
   if (isPromise(acc)) {
@@ -10,7 +10,7 @@ export function invokeFunction(acc, curr) {
 }
 
 export function pipe(actions = []) {
-  return function(...args) {
+  return function (...args) {
     return actions.reduce((acc, curr, idx) => {
       if (idx === 0) {
         return curr(...args);

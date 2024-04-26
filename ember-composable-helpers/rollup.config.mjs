@@ -27,8 +27,7 @@ export default {
     // 'app' tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
     addon.appReexports([
-      'helpers/**/*.js',
-      'utils/**/*.js',
+      'helpers/**/*.js'
     ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
@@ -48,11 +47,11 @@ export default {
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
-    addon.hbs(),
+    // addon.hbs(),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
-    addon.keepAssets(['**/*.css']),
+    // addon.keepAssets(['**/*.css']),
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),

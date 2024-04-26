@@ -1,6 +1,6 @@
 {
-  "name": "ember-composable-helpers",
-  "version": "5.0.0",
+  "name": "@nullvoxpopuli/ember-composable-helpers",
+  "version": "5.0.5",
   "description": "Composable helpers for Ember",
   "scripts": {
     "build": "rollup --config",
@@ -12,11 +12,6 @@
     "start": "rollup --config --watch",
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
     "test:all": "ember try:each"
-  },
-  "bugs": "https://github.com/DockYard/ember-composable-helpers/issues",
-  "homepage": "https://github.com/DockYard/ember-composable-helpers",
-  "engines": {
-    "node": ">= 16"
   },
   "contributors": [
     "Lauren Tan <arr@sugarpirate.com>",
@@ -45,33 +40,26 @@
     "drop",
     "compute"
   ],
-  "repository": "https://github.com/DockYard/ember-composable-helpers",
+  "repository": "https://github.com/NullVoxPopuli/ember-composable-helpers",
   "license": "MIT",
-  "author": "Dockyard <oss@dockyard.com>",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "author": "The Ember Community",
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@embroider/addon-shim": "^1.8.6",
-    "broccoli-funnel": "2.0.1",
-    "resolve": "^1.10.0"
-  },
-  "ember": {
-    "edition": "octane"
+    "@embroider/addon-shim": "^1.8.7"
   },
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.js"
+    "./addon-main.js": "./addon-main.cjs",
+    "./addon-main.cjs": "./addon-main.cjs",
+    "./addon-main": "./addon-main.cjs"
   },
   "files": [
     "addon-main.cjs",
-    "dist"
+    "dist",
+    "src"
   ],
   "ember-addon": {
-    "main": "addon-main.js",
+    "main": "addon-main.cjs",
     "type": "addon",
     "version": 2,
     "app-js": {
@@ -121,13 +109,7 @@
       "./helpers/toggle.js": "./dist/_app_/helpers/toggle.js",
       "./helpers/union.js": "./dist/_app_/helpers/union.js",
       "./helpers/values.js": "./dist/_app_/helpers/values.js",
-      "./helpers/without.js": "./dist/_app_/helpers/without.js",
-      "./utils/as-array.js": "./dist/_app_/utils/as-array.js",
-      "./utils/comparison.js": "./dist/_app_/utils/comparison.js",
-      "./utils/get-index.js": "./dist/_app_/utils/get-index.js",
-      "./utils/is-equal.js": "./dist/_app_/utils/is-equal.js",
-      "./utils/is-object.js": "./dist/_app_/utils/is-object.js",
-      "./utils/is-promise.js": "./dist/_app_/utils/is-promise.js"
+      "./helpers/without.js": "./dist/_app_/helpers/without.js"
     }
   }
 }

@@ -20,14 +20,30 @@ To install:
 **Ember 3.28+:**
 
 ```no-highlight
-ember install ember-composable-helpers
+npm add @nullvoxpopuli/ember-composable-helpers
 ```
 
-Watch a free video overview presented by EmberMap:
+To use in an existing project, to replace the original [ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers):
 
-<a href='https://embermap.com/topics/refactorings/ember-composable-helpers'>
-  <img height="20" src="https://frontend.embermap.com/assets/images/logo-7333e9d5f48c9cd4a0ee6476a5af1083.png">
-</a>
+under webpack, configure an alias:
+```js
+resolve: {
+  alias: {
+    "ember-composable-helpers": "@nullvoxpopuli/ember-composable-helpers",
+  },
+},
+```
+
+under classic builds, using ember-auto-import, the alias would be configured this way:
+
+```js
+// ember-cli-build.js
+autoImport: {
+  alias: {
+    "ember-composable-helpers": "@nullvoxpopuli/ember-composable-helpers",
+  },
+},
+```
 
 ## Table of Contents
   - [Compatability](#compatibility)

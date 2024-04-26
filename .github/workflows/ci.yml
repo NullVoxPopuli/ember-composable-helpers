@@ -12,91 +12,66 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          cache: 'pnpm'
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            */node_modules
-          key: node_modules-${{runner.os}}-${{hashFiles('**/pnpm-lock.yaml')}}-v2
-      - name: Install dependencies
-        run: CI=true pnpm i --frozen-lockfile
-  build:
-    name: ${{matrix.task}} ${{matrix.app}}
-    runs-on: ubuntu-20.04
-    needs: [ cache-dependencies ]
-    strategy:
-      matrix:
-        app: [ ember-composable-helpers ]
-      fail-fast: false
+      - uses: wyvox/action-setup-pnpm@v3
+
+  test-default:
+    name: Test
+    env:
+      CI: true
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          cache: 'pnpm'
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        id: cache
-        with:
-          path: |
-            node_modules
-            */node_modules
-          key: node_modules-${{runner.os}}-${{hashFiles('**/pnpm-lock.yaml')}}-v2
-      - name: Fail if not cached
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: 'false'
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm build
+      - run: pnpm run test
+        working-directory: ./test-app
 
-      # - name: ${{matrix.app}} Test (includes build)
-      #   working-directory: ${{matrix.app}}
-      #   run: pnpm run test
-  # test:
-  #   name: Test
-  #   env:
-  #     CI: true
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Install node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 16.x
-  #         cache: npm
-  #     - run: npm install
-  #     - run: npm run test
-  #     working-directory: ./test-app
+  test-min-supported:
+    name: Test min supported
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm build
+      - run: pnpm run test
+        working-directory: ./test-app-min-supported
 
-  # ember-try:
-  #   name: "Ember Try"
-  #   env:
-  #     CI: true
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       try-scenario:
-  #         [
-  #           ember-lts-3.28,
-  #           ember-release,
-  #           ember-beta,
-  #           ember-canary,
-  #           embroider-safe,
-  #           # embroider-optimized, ember-data is currently failing. https://github.com/embroider-build/embroider/issues/396#issuecomment-611885598
-  #         ]
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Install node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 16.x
-  #         cache: npm
-  #     - run: npm install
-  #     - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
-  #       timeout-minutes: 10
+  test-min-supported-classic:
+    name: Test min supported classic (non-embroider)
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm build
+      - run: pnpm run test
+        working-directory: ./test-app-min-supported-classic
+
+  ember-try:
+    name: "Ember Try"
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        try-scenario:
+          [
+            ember-lts-4.4,
+            ember-lts-4.8,
+            ember-lts-4.12,
+            ember-lts-5.4,
+            ember-lts-5.8,
+            ember-release,
+            ember-beta,
+            ember-canary,
+          ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm build
+      - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
+        working-directory: ./test-app
+        timeout-minutes: 10

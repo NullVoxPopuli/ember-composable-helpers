@@ -1,2 +1,5 @@
 packages:
   - 'ember-composable-helpers'
+  - 'test-app'
+  - 'test-app-min-supported'
+  - 'test-app-min-supported-classic'

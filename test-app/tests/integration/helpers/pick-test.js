@@ -9,7 +9,7 @@ module('Integration | Helper | pick', function(hooks) {
   test("Works when used with {{on}} modifier and pipe", async function(assert) {
     assert.expect(1);
 
-    this.set('onFocus', function(value) {
+    this.set('click', function(value) {
       assert.equal(value, 'pizza party', 'The action receives the correct value');
     })
 
@@ -17,7 +17,7 @@ module('Integration | Helper | pick', function(hooks) {
       <input
         id="test-input"
         value="pizza party"
-        {{on 'focusin' (pipe (pick 'target.value') this.onFocus)}}
+        {{on 'click' (pipe (pick 'target.value') this.click)}}
       />
     `);
 
@@ -27,7 +27,7 @@ module('Integration | Helper | pick', function(hooks) {
   test("Shorthand works when used with {{on}} modifier and optional action is provided", async function(assert) {
     assert.expect(1);
 
-    this.set('onFocus', function(value) {
+    this.set('click', function(value) {
       assert.equal(value, 'pizza party', 'The action receives the correct value');
     })
 
@@ -35,7 +35,7 @@ module('Integration | Helper | pick', function(hooks) {
       <input
         id="test-input"
         value="pizza party"
-        {{on 'focusin' (pick 'target.value' this.onFocus)}}
+        {{on 'click' (pick 'target.value' this.click)}}
       />
     `);
 
