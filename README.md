@@ -34,6 +34,17 @@ resolve: {
 },
 ```
 
+under classic builds, using ember-auto-import, the alias would be configured this way:
+
+```js
+// ember-cli-build.js
+autoImport: {
+  alias: {
+    "ember-composable-helpers": "@nullvoxpopuli/ember-composable-helpers",
+  },
+},
+```
+
 ## Table of Contents
   - [Compatability](#compatibility)
   - [Configuration](#configuration)

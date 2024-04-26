@@ -38,6 +38,18 @@ jobs:
       - run: pnpm run test
         working-directory: ./test-app-min-supported
 
+  test-min-supported-classic:
+    name: Test min supported classic (non-embroider)
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm build
+      - run: pnpm run test
+        working-directory: ./test-app-min-supported-classic
+
   ember-try:
     name: "Ember Try"
     env:
