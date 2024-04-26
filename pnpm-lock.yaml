@@ -75,6 +75,9 @@ importers:
       '@embroider/webpack':
         specifier: ^4.0.0
         version: 4.0.0(@embroider/core@3.4.8)(webpack@5.91.0)
+      '@nullvoxpopuli/ember-composable-helpers':
+        specifier: workspace:*
+        version: link:../ember-composable-helpers
       chai:
         specifier: ^3.5.0
         version: 3.5.0
@@ -102,9 +105,6 @@ importers:
       ember-cli-inject-live-reload:
         specifier: ^1.8.2
         version: 1.10.2
-      ember-composable-helpers:
-        specifier: workspace:*
-        version: link:../ember-composable-helpers
       ember-disable-prototype-extensions:
         specifier: ^1.1.3
         version: 1.1.3
@@ -189,6 +189,9 @@ importers:
       '@embroider/webpack':
         specifier: ^4.0.0
         version: 4.0.0(@embroider/core@3.4.8)(webpack@5.91.0)
+      '@nullvoxpopuli/ember-composable-helpers':
+        specifier: workspace:*
+        version: link:../ember-composable-helpers
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@5.16.0)
@@ -225,9 +228,6 @@ importers:
       ember-cli-terser:
         specifier: ^4.0.2
         version: 4.0.2
-      ember-composable-helpers:
-        specifier: workspace:*
-        version: link:../ember-composable-helpers
       ember-disable-prototype-extensions:
         specifier: ^1.1.3
         version: 1.1.3

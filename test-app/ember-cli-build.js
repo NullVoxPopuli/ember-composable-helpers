@@ -18,5 +18,15 @@ module.exports = function (defaults) {
     staticModifiers: true,
     staticComponents: true,
     staticEmberSource: true,
+    packagerOptions: {
+      webpackConfig: {
+        resolve: {
+          alias: {
+            "ember-composable-helpers":
+              "@nullvoxpopuli/ember-composable-helpers",
+          },
+        },
+      },
+    },
   });
 };

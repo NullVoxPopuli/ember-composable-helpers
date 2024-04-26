@@ -1,5 +1,5 @@
 {
-  "name": "ember-composable-helpers",
+  "name": "@nullvoxpopuli/ember-composable-helpers",
   "version": "5.0.4",
   "description": "Composable helpers for Ember",
   "scripts": {
