@@ -1,7 +1,10 @@
 {
   "name": "workspace-root",
   "private": true,
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NullVoxPopuli/ember-composable-helpers.git"
+  },
   "license": "MIT",
   "author": "",
   "scripts": {
@@ -13,10 +16,11 @@
     "start:test-app": "pnpm filter --workspace start test-app",
     "test": "pnpm --workspaces --if-present test"
   },
-  "packageManager": "pnpm@9.0.6",
   "devDependencies": {
-    "concurrently": "^8.2.1"
+    "concurrently": "^8.2.1",
+    "release-plan": "^0.9.0"
   },
+  "packageManager": "pnpm@9.0.6",
   "volta": {
     "node": "20.12.2",
     "pnpm": "9.0.6"
