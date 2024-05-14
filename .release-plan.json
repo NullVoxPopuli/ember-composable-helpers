@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "@nullvoxpopuli/ember-composable-helpers": {
+      "impact": "minor",
+      "oldVersion": "5.0.5",
+      "newVersion": "5.1.0",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember-composable-helpers/package.json"
+    }
+  },
+  "description": "## Release (2024-05-14)\n\n@nullvoxpopuli/ember-composable-helpers 5.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#1](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/1) Get everything working ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :memo: Documentation\n* Other\n  * [#4](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/4) Delete UPGRADING.md, no longer relevant ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* `test-app`\n  * [#2](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/2) Remove references to dockyard ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* Other\n  * [#8](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/8) Add renovate ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#9](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/9) Re-roll lockfile ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#6](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/6) Fix release-plan boilerplate ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#3](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/3) Setup release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#5](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/5) Update addon-shim ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+}
