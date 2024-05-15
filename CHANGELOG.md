@@ -1,5 +1,17 @@
 ### Changelog
 
+## Release (2024-05-15)
+
+@nullvoxpopuli/ember-composable-helpers 5.1.1 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#12](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/12) Fix `filter-by` not working when `undefined` is explicitly passed ([@boris-petrov](https://github.com/boris-petrov))
+  * [#11](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/11) Allow null-like values in `queue` ([@boris-petrov](https://github.com/boris-petrov))
+
+#### Committers: 1
+- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))
+
 ## Release (2024-05-14)
 
 @nullvoxpopuli/ember-composable-helpers 5.1.0 (minor)
