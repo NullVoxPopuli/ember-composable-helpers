@@ -13,7 +13,7 @@ import Helper from '@ember/component/helper';
  * @param {Array<Function>} fn - The function to be called
  * @param {*=} thisArg - An optional `this` context
  */
-export function call([fn, thisArg]: [() => void, unknown]) {
+export function call([fn, thisArg]: [(...args: never[]) => unknown, unknown?]) {
     if (fn) {
         if (thisArg) {
             return fn.apply(thisArg);

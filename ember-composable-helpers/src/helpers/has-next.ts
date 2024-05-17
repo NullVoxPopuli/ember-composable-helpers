@@ -5,8 +5,6 @@ import isEqual from '../utils/is-equal';
 import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params';
 import asArray from '../utils/as-array';
 
-type Params = Parameters<typeof getValueArrayAndUseDeepEqualFromParams>[0];
-
 export function hasNext<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) {
   let array = asArray(maybeArray);
   let nextValue = next(currentValue, array, useDeepEqual);

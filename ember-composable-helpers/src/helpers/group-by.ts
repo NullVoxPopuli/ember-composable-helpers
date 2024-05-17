@@ -6,12 +6,12 @@ export function groupBy<T>([byPath, array]: [string, T[]]) {
   let groups: { [key: string]: T[] } = {};
 
   asArray(array).forEach((item) => {
-    let groupName = get(item, byPath);
-    let group = groups[groupName as string];
+    let groupName = get(item, byPath) as string;
+    let group = groups[groupName];
 
     if (!Array.isArray(group)) {
       group = [];
-      groups[groupName as string] = group;
+      groups[groupName] = group;
     }
 
     group.push(item);
