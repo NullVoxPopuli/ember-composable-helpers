@@ -81,13 +81,13 @@ And then running through gzip (build -> min -> gzip)
 
 And then running through brotly (build -> min -> brotli)
 ```bash
-❯ du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".br$" ember-composable-helpers/dist/
-1.4K └─┬ dist
-838B   ├── helpers
-494B   ├── _app_
- 69B   ├── utils
- 39B   ├── -private
- 13B   └── index.js.min.br
+❯  du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".br$" ember-composable-helpers/dist/
+ 13K └─┬ dist
+8.3K   ├── helpers
+3.4K   ├── _app_
+1.0K   ├── utils
+370B   ├── index.js.min.br
+295B   └── -private
 ```
 
 
