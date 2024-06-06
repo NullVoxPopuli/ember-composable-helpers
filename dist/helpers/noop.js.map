@@ -1,0 +1,1 @@
+{"version":3,"file":"noop.js","sources":["../../src/helpers/noop.js"],"sourcesContent":["import { helper } from \"@ember/component/helper\";\n\nexport function noop() {\n  return () => {};\n}\n\nexport default helper(noop);\n"],"names":["noop","helper"],"mappings":";;AAEO,SAASA,IAAIA,GAAG;EACrB,OAAO,MAAM,EAAE,CAAA;AACjB,CAAA;AAEA,aAAeC,MAAM,CAACD,IAAI,CAAC;;;;"}
