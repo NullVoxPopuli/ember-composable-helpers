@@ -1,17 +1,8 @@
 {
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
-      "impact": "patch",
-      "oldVersion": "5.1.0",
-      "newVersion": "5.1.1",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        }
-      ],
-      "pkgJSONPath": "./ember-composable-helpers/package.json"
+      "oldVersion": "5.1.1"
     }
   },
-  "description": "## Release (2024-05-15)\n\n@nullvoxpopuli/ember-composable-helpers 5.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#12](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/12) Fix `filter-by` not working when `undefined` is explicitly passed ([@boris-petrov](https://github.com/boris-petrov))\n  * [#11](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/11) Allow null-like values in `queue` ([@boris-petrov](https://github.com/boris-petrov))\n\n#### Committers: 1\n- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))\n"
+  "description": "## Release (2024-06-06)\n\n\n\n#### :memo: Documentation\n* [#15](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/15) Add notes about impact to consumer's bundle size ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
