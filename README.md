@@ -43,6 +43,55 @@ autoImport: {
 },
 ```
 
+Note that under auto-import, all helpers will be included.
+Under embroider, when static helpers/components are turned on, only what you use will be in the build output.
+
+For Assessing impact, the whole library is 38K (no min, no gzip or brotly)
+```bash
+❯ du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".js$" ember-composable-helpers/dist/
+  38K └─┬ dist
+  26K   ├── helpers
+ 4.4K   ├── utils
+ 3.8K   ├── _app_
+ 2.5K   ├── index.js
+1003B   └── -private
+```
+
+Running thruogh terser, the whole library becames **24K**
+```bash
+❯ du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".min$" ember-composable-helpers/dist/
+ 24K └─┬ dist
+ 15K   ├── helpers
+3.5K   ├── _app_
+2.6K   ├── utils
+2.2K   ├── index.js.min
+658B   └── -private
+```
+
+And then running through gzip (build -> min -> gzip)
+```bash
+❯ du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".gz$" ember-composable-helpers/dist/
+ 17K └─┬ dist
+ 10K   ├── helpers
+4.7K   ├── _app_
+1.3K   ├── utils
+443B   ├── -private
+416B   └── index.js.min.gzip
+```
+
+And then running through brotly (build -> min -> brotli)
+```bash
+❯  du --depth 1 --reverse --apparent-size --no-percent-bars --filter ".br$" ember-composable-helpers/dist/
+ 13K └─┬ dist
+8.3K   ├── helpers
+3.4K   ├── _app_
+1.0K   ├── utils
+370B   ├── index.js.min.br
+295B   └── -private
+```
+
+
+
 ## Table of Contents
   - [Compatability](#compatibility)
   - [Configuration](#configuration)
@@ -109,27 +158,6 @@ autoImport: {
 * [ember-source][gh-ember-source] v3.28+
 * [typescript][gh-typescript] v4.8+
 * [ember-auto-import][gh-ember-auto-import] v2+
-
-## Configuration
-If you don't need all the helpers, you can specify which to include or remove from your build using `only` or `except` within your `ember-cli-build.js`:
-
-```js
-module.exports = function(defaults) {
-  var app = new EmberApp(defaults, {
-    'ember-composable-helpers': {
-      only: ['inc', 'dec', 'pipe'],
-      except: ['filter-by']
-    }
-  });
-}
-```
-
-Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
-
-```js
-except: ['pipe'] // imports all helpers except `pipe`
-only: ['pipe'] // imports only `pipe`
-```
 
 ## Argument ordering
 
