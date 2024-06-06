@@ -1,5 +1,15 @@
 ### Changelog
 
+## Release (2024-06-06)
+
+
+
+#### :memo: Documentation
+* [#15](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/15) Add notes about impact to consumer's bundle size ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-05-15)
 
 @nullvoxpopuli/ember-composable-helpers 5.1.1 (patch)
