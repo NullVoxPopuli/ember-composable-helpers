@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import { toggle } from './toggle';
-import ACTION from '../-private/closure-action';
+import { toggle } from './toggle.ts';
+import ACTION from '../-private/closure-action.ts';
 
 const closureToggle = toggle;
 if (ACTION) {

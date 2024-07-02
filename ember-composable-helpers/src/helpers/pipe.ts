@@ -1,5 +1,5 @@
 import { helper } from "@ember/component/helper";
-import isPromise from "../utils/is-promise";
+import isPromise from "../utils/is-promise.ts";
 
 export function invokeFunction<T>(acc: T, curr: (...args: unknown[]) => void) {
   if (isPromise(acc)) {

@@ -2,8 +2,8 @@ import { helper } from '@ember/component/helper';
 import { isArray as isEmberArray } from '@ember/array';
 import { isPresent } from '@ember/utils';
 import { get } from '@ember/object';
-import isEqual from '../utils/is-equal';
-import asArray from '../utils/as-array';
+import isEqual from '../utils/is-equal.ts';
+import asArray from '../utils/as-array.ts';
 
 export function rejectBy<T>([byPath, value, array]: [string, T | T[] | undefined, T[]]) {
   if (!isEmberArray(array) && isEmberArray(value)) {

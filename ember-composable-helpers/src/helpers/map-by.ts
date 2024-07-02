@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { get } from '@ember/object';
 import { isEmpty } from '@ember/utils';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function mapBy<T>([byPath, array]: [keyof T, T[]]) {
   if (isEmpty(byPath)) {

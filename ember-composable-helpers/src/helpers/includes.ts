@@ -1,7 +1,7 @@
 import { A as emberArray } from '@ember/array';
 import { isArray as isEmberArray } from '@ember/array';
 import { helper } from '@ember/component/helper';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
   if (!isEmberArray(haystack)) {

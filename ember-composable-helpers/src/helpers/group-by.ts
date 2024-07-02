@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 import { get } from '@ember/object';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function groupBy<T>([byPath, array]: [string, T[]]) {
   let groups: { [key: string]: T[] } = {};

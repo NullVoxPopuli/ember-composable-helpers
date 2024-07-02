@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import isPromise from '../utils/is-promise';
+import isPromise from '../utils/is-promise.ts';
 
 function invokeMaybeNullable(curr: (...args1: unknown[]) => void | null, args: unknown[]) {
   return curr == null ? undefined : curr(...args);

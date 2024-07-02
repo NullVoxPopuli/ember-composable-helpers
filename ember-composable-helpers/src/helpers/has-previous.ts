@@ -1,9 +1,9 @@
 import { helper } from '@ember/component/helper';
 import { isPresent } from '@ember/utils';
-import { previous } from './previous';
-import isEqual from '../utils/is-equal';
-import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params';
-import asArray from '../utils/as-array';
+import { previous } from './previous.ts';
+import isEqual from '../utils/is-equal.ts';
+import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params.ts';
+import asArray from '../utils/as-array.ts';
 
 export function hasPrevious<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) {
   let array = asArray(maybeArray);

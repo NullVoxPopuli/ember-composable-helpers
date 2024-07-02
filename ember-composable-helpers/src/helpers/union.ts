@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function union([...arrays]) {
   let items = [].concat(...arrays);

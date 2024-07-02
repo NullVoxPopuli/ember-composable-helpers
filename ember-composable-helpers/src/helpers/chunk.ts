@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { isArray as isEmberArray } from '@ember/array';
 const { max, ceil } = Math;
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function chunk<T>(num: number | string, array: T[]) {
   let integer = parseInt(num as string, 10);

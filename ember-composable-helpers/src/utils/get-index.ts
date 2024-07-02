@@ -1,5 +1,5 @@
 import { A as emberArray } from '@ember/array';
-import isEqual from '../utils/is-equal';
+import isEqual from '../utils/is-equal.ts';
 
 export default function getIndex<T>(array: T[], currentValue: T, useDeepEqual: boolean) {
   let needle = currentValue;

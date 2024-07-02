@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import { pipe } from './pipe';
-import ACTION from '../-private/closure-action';
+import { pipe } from './pipe.ts';
+import ACTION from '../-private/closure-action.ts';
 
 const closurePipe = pipe;
 if (ACTION) {

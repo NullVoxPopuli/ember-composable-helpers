@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 import { isArray as isEmberArray } from '@ember/array';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 export function intersect<T>([...arrays]: [...T[]]) {
   let confirmedArrays = asArray(arrays).map(array => {

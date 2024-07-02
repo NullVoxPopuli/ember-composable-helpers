@@ -2,7 +2,7 @@ import { get } from '@ember/object';
 import { isEmpty } from '@ember/utils';
 import { helper } from '@ember/component/helper';
 import EmberArray from '@ember/array';
-import asArray from '../utils/as-array';
+import asArray from '../utils/as-array.ts';
 
 const collator = new Intl.Collator(undefined, {
   sensitivity: 'base'

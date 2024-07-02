@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
 import { typeOf } from '@ember/utils';
-import { gte, lte, gt, lt } from '../utils/comparison';
+import { gte, lte, gt, lt } from '../utils/comparison.ts';
 
 export function range([min, max, isInclusive]: [number, number, boolean?]) {
   isInclusive = typeOf(isInclusive) === 'boolean' ? isInclusive : false;
