@@ -3,13 +3,18 @@
   "version": "5.1.1",
   "description": "Composable helpers for Ember",
   "scripts": {
-    "build": "rollup --config",
+    "build": "concurrently 'pnpm:build:*'",
+    "build:js": "rollup --config",
+    "build:types": "glint --declaration",
     "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
+    "lint:types": "glint",
     "node-test": "mocha test --recursive --reporter spec",
-    "prepack": "rollup --config",
-    "start": "rollup --config --watch",
+    "prepack": "concurrently 'pnpm:build:*'",
+    "start": "concurrently 'pnpm:start:*'",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch",
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
     "test:all": "ember try:each"
   },
@@ -21,12 +26,43 @@
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.22.15",
     "@babel/plugin-transform-class-properties": "^7.22.5",
+    "@babel/plugin-transform-typescript": "^7.23.6",
     "@babel/runtime": "^7.22.15",
     "@embroider/addon-dev": "^4.1.0",
+    "@glint/core": "^1.2.1",
+    "@glint/environment-ember-loose": "^1.2.1",
+    "@glint/environment-ember-template-imports": "^1.2.1",
+    "@glint/template": "^1.2.1",
     "@rollup/plugin-babel": "^6.0.3",
+    "@tsconfig/ember": "^3.0.2",
+    "@types/ember": "^4.0.10",
+    "@types/ember__application": "^4.0.10",
+    "@types/ember__array": "^4.0.9",
+    "@types/ember__component": "^4.0.21",
+    "@types/ember__controller": "^4.0.11",
+    "@types/ember__debug": "^4.0.7",
+    "@types/ember__destroyable": "^4.0.4",
+    "@types/ember__engine": "^4.0.10",
+    "@types/ember__error": "^4.0.5",
+    "@types/ember__helper": "^4.0.5",
+    "@types/ember__modifier": "^4.0.8",
+    "@types/ember__object": "^4.0.11",
+    "@types/ember__owner": "^4.0.8",
+    "@types/ember__polyfills": "^4.0.5",
+    "@types/ember__routing": "^4.0.19",
+    "@types/ember__runloop": "^4.0.8",
+    "@types/ember__service": "^4.0.8",
+    "@types/ember__string": "^3.16.3",
+    "@types/ember__template": "^4.0.5",
+    "@types/ember__test": "^4.0.5",
+    "@types/ember__utils": "^4.0.6",
+    "@types/rsvp": "^4.0.9",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
     "concurrently": "^8.2.1",
     "rollup": "^3.29.1",
-    "rollup-plugin-copy": "^3.5.0"
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.3.3"
   },
   "keywords": [
     "ember-addon",
@@ -47,11 +83,24 @@
     "@embroider/addon-shim": "^1.8.8"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js",
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
     "./addon-main.js": "./addon-main.cjs",
     "./addon-main.cjs": "./addon-main.cjs",
     "./addon-main": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
   },
   "files": [
     "addon-main.cjs",

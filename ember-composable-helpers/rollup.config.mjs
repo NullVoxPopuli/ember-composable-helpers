@@ -21,6 +21,7 @@ export default {
       'helpers/**/*.js',
       'index.js',
       'utils/**/*.js',
+      'template-registry.js'
     ]),
 
     // These are the modules that should get reexported into the traditional
@@ -43,7 +44,7 @@ export default {
     // babel.config.json.
     babel({
       babelHelpers: 'bundled',
-      extensions: ['.js'],
+      extensions: ['.js', '.ts'],
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.

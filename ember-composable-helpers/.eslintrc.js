@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -22,6 +22,17 @@ module.exports = {
     'ember/no-jquery': 'error'
   },
   overrides: [
+    // ts files
+    {
+      files: ['**/*.ts', '**/*.gts'],
+      extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+      ],
+      rules: {
+        // Add any custom rules here
+      },
+    },
     // node files
     {
       files: [
