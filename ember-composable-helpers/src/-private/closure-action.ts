@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-// @ts-expect-error
 const { __loader } = Ember;
 
 let ClosureActionModule = { ACTION: null };

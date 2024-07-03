@@ -25,4 +25,4 @@ export function queue(actions: (() => void)[] = []) {
   };
 }
 
-export default helper(queue);
+export default helper(queue as (actions: unknown[]) => unknown);

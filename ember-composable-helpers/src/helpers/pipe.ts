@@ -21,4 +21,4 @@ export function pipe(actions: [...((...args1: unknown[]) => unknown)[]] = []) {
   };
 }
 
-export default helper(pipe);
+export default helper(pipe as (actions: unknown[]) => unknown);

@@ -11,7 +11,7 @@ export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
   let needles = isEmberArray(needleOrNeedles) ? needleOrNeedles : [needleOrNeedles];
   let haystackAsEmberArray = emberArray(asArray(haystack));
 
-  return asArray(needles).every((needle) => {
+  return asArray(needles as T[]).every((needle) => {
     return haystackAsEmberArray.includes(needle);
   });
 }

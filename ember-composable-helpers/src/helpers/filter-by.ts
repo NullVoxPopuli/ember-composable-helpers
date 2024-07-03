@@ -9,7 +9,7 @@ export function filterBy<T>([byPath, value, array]: [string, T | T[] | undefined
 
   let isPresent = true;
   if (!isEmberArray(array) && isEmberArray(value)) {
-    array = value;
+    array = value as T[];
     value = undefined;
     isPresent = false;
   }

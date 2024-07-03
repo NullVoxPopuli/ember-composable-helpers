@@ -11,18 +11,18 @@ function nextIndex(length: number, currentIdx: number) {
   return currentIdx + 1;
 }
 
-export function toggle<T>([prop, obj, ...values]: [keyof T, T, ...(T[keyof T])[]]) {
+export function toggle<T extends object>([prop, obj, ...values]: [keyof T, T, ...(T[keyof T])[]]) {
   return function() {
     let currentValue = get(obj, prop);
 
     if (isPresent(values)) {
-      let currentIdx = values.indexOf(currentValue as T[keyof T]);
+      let currentIdx = values.indexOf(currentValue);
       let nextIdx = nextIndex(values.length, currentIdx);
 
-      return set(obj, prop, values[nextIdx]!);
+      return set(obj, prop as string, values[nextIdx]!);
     }
 
-    return set(obj, prop, !currentValue as T[keyof T]);
+    return set(obj, prop as string, !currentValue);
   };
 }
 

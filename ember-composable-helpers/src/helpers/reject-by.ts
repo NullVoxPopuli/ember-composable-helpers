@@ -7,7 +7,7 @@ import asArray from '../utils/as-array.ts';
 
 export function rejectBy<T>([byPath, value, array]: [string, T | T[] | undefined, T[]]) {
   if (!isEmberArray(array) && isEmberArray(value)) {
-    array = value;
+    array = value as T[];
     value = undefined;
   }
   array = asArray(array);
