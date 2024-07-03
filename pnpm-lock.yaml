@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@glint/core':
-        specifier: ^1.2.1
+        specifier: ^1.4.0
         version: 1.4.0(typescript@5.5.3)
       concurrently:
         specifier: ^8.2.1
@@ -123,6 +123,9 @@ importers:
       '@types/ember__utils':
         specifier: ^4.0.6
         version: 4.0.7(@babel/core@7.24.5)
+      '@types/rsvp':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.14.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)

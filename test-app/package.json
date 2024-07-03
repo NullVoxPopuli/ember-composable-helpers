@@ -8,7 +8,7 @@
     "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "lint:types": "tsc --noEmit",
+    "lint:types": "glint",
     "start": "ember serve",
     "test": "ember test",
     "node-test": "mocha test --recursive --reporter spec",
