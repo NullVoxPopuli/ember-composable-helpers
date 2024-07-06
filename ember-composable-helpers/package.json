@@ -7,6 +7,7 @@
     "build:js": "rollup --config",
     "build:types": "glint --declaration",
     "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "lint:types": "glint",
