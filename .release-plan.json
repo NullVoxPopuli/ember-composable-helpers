@@ -1,17 +1,17 @@
 {
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
-      "impact": "patch",
-      "oldVersion": "5.1.0",
-      "newVersion": "5.1.1",
+      "impact": "minor",
+      "oldVersion": "5.1.1",
+      "newVersion": "5.2.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2024-05-15)\n\n@nullvoxpopuli/ember-composable-helpers 5.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#12](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/12) Fix `filter-by` not working when `undefined` is explicitly passed ([@boris-petrov](https://github.com/boris-petrov))\n  * [#11](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/11) Allow null-like values in `queue` ([@boris-petrov](https://github.com/boris-petrov))\n\n#### Committers: 1\n- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))\n"
+  "description": "## Release (2024-07-06)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#13](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/13) Install TypeScript, add template registry ([@charlesfries](https://github.com/charlesfries))\n\n#### :memo: Documentation\n* [#15](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/15) Add notes about impact to consumer's bundle size ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* [#14](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/14) Fix start scripts ([@charlesfries](https://github.com/charlesfries))\n\n#### Committers: 2\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

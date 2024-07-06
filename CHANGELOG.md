@@ -1,5 +1,23 @@
 ### Changelog
 
+## Release (2024-07-06)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.0 (minor)
+
+#### :rocket: Enhancement
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#13](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/13) Install TypeScript, add template registry ([@charlesfries](https://github.com/charlesfries))
+
+#### :memo: Documentation
+* [#15](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/15) Add notes about impact to consumer's bundle size ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* [#14](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/14) Fix start scripts ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 2
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-05-15)
 
 @nullvoxpopuli/ember-composable-helpers 5.1.1 (patch)
