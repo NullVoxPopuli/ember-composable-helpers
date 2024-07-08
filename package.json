@@ -12,11 +12,12 @@
     "lint": "pnpm --filter --if-present lint",
     "lint:fix": "pnpm --filter --if-present lint:fix",
     "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "pnpm --workspace ember-composable-helpers",
-    "start:test-app": "pnpm filter --workspace start test-app",
+    "start:addon": "pnpm --filter ember-composable-helpers start --no-watch.clearScreen",
+    "start:test-app": "pnpm --filter test-app start",
     "test": "pnpm --workspaces --if-present test"
   },
   "devDependencies": {
+    "@glint/core": "^1.4.0",
     "concurrently": "^8.2.1",
     "release-plan": "^0.9.0"
   },

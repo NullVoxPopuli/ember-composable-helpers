@@ -51,7 +51,15 @@ module('Integration | Helper | {{includes}}', function(hooks) {
 
     assert.dom().hasText('true', 'should render true');
 
-    run(() => this.get('wishlist').removeObject(games[0]));
+    assert.dom().hasText('true', 'should render true');
+    assert.true(!this.wishlist.removeObject, 'should not extend the array with additional functions')
+
+    run(() =>
+      this.set(
+        "wishlist",
+        this.wishlist.filter((game) => game !== games[0])
+      )
+    );
 
     assert.dom().hasText('false', 'should render false');
 
