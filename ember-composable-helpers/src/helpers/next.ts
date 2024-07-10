@@ -1,7 +1,6 @@
 import { helper } from '@ember/component/helper';
 import getIndex from '../utils/get-index.ts';
 import { isEmpty } from '@ember/utils';
-import { A as emberArray } from '@ember/array';
 import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params.ts';
 import asArray from '../utils/as-array.ts';
 
@@ -14,7 +13,7 @@ export function next<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) 
     return;
   }
 
-  return currentIndex === lastIndex ? currentValue : emberArray(array).objectAt(currentIndex + 1);
+  return currentIndex === lastIndex ? currentValue : array.at(currentIndex + 1);
 }
 
 export default helper(function<T>(params: [T, boolean | T[], T[]?]) {

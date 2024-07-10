@@ -39,6 +39,7 @@ module('Integration | Helper | {{find-by}}', function(hooks) {
     `);
 
     assert.dom().hasText('b', 'b is shown');
+    assert.true(!this.array.removeObject, 'should not extend the array with additional functions')
   });
 
   test('It recomputes the filter if array changes', async function(assert) {

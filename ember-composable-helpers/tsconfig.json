@@ -8,6 +8,7 @@
     "environment": ["ember-loose", "ember-template-imports"]
   },
   "compilerOptions": {
+    "target": "es2022",
     "allowJs": true,
     "declarationDir": "declarations",
     /**
