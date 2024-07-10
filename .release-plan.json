@@ -1,17 +1,17 @@
 {
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
-      "impact": "minor",
-      "oldVersion": "5.1.1",
-      "newVersion": "5.2.0",
+      "impact": "patch",
+      "oldVersion": "5.2.0",
+      "newVersion": "5.2.1",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2024-07-06)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#13](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/13) Install TypeScript, add template registry ([@charlesfries](https://github.com/charlesfries))\n\n#### :memo: Documentation\n* [#15](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/15) Add notes about impact to consumer's bundle size ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* [#14](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/14) Fix start scripts ([@charlesfries](https://github.com/charlesfries))\n\n#### Committers: 2\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2024-07-10)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.1 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#17](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/17) fix: avoid to array mutation ([@wozny1989](https://github.com/wozny1989))\n\n#### Committers: 1\n- Adam Woźny ([@wozny1989](https://github.com/wozny1989))\n"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@nullvoxpopuli/ember-composable-helpers",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "Composable helpers for Ember",
   "scripts": {
     "build": "concurrently 'pnpm:build:*'",
