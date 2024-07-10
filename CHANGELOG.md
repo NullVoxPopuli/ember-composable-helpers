@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2024-07-10)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.1 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#17](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/17) fix: avoid to array mutation ([@wozny1989](https://github.com/wozny1989))
+
+#### Committers: 1
+- Adam Woźny ([@wozny1989](https://github.com/wozny1989))
+
 ## Release (2024-07-06)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.0 (minor)
