@@ -87,6 +87,7 @@
   "files": [
     "addon-main.cjs",
     "dist",
+    "declarations",
     "src"
   ],
   "ember-addon": {
