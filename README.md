@@ -2,8 +2,23 @@
 
 A modern fork of the original utility library.
 
+template tag `gts/gjs` example:
 
-example:
+```gjs
+import { mapBy, pipe, mut } from '@nullvoxpopuli/ember-composable-helpers';
+
+<template>
+  {{#each (mapBy "fullName" users) as |fullName|}}
+    <input type="text" value={{fullName}} onchange={{mut newName}}>
+    <button {{on 'click' (pipe updateFullName saveUser) newName}}>
+      Update and save {{fullName}} to {{newName}}
+    </button>
+  {{/each}}
+</template>
+```
+
+class example:
+
 ```hbs
 {{#each (map-by "fullName" users) as |fullName|}}
   <input type="text" value={{fullName}} onchange={{action (mut newName)}}>
