@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2024-09-15)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.2 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#21](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/21) fix: export `declarations` ([@aklkv](https://github.com/aklkv))
+
+#### Committers: 1
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+
 ## Release (2024-07-10)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.1 (patch)
