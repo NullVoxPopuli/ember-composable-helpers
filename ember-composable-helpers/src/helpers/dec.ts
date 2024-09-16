@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { isEmpty } from '@ember/utils';
 
-export function dec([step, val]: [number | undefined, number | undefined]) {
+export function dec([step, val]: [number | undefined, (number | undefined)?]) {
   if (isEmpty(val)) {
     val = step;
     step = undefined;
