@@ -1,5 +1,17 @@
 ### Changelog
 
+## Release (2024-09-16)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.3 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#24](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/24) Make second arg of `inc` and `dec` helpers optional ([@charlesfries](https://github.com/charlesfries))
+  * [#23](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/23) Add `includes` and `pick` to template registry ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 1
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+
 ## Release (2024-09-15)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.2 (patch)
