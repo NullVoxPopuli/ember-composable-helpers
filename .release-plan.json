@@ -2,8 +2,8 @@
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
       "impact": "patch",
-      "oldVersion": "5.2.1",
-      "newVersion": "5.2.2",
+      "oldVersion": "5.2.2",
+      "newVersion": "5.2.3",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2024-09-15)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.2 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#21](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/21) fix: export `declarations` ([@aklkv](https://github.com/aklkv))\n\n#### Committers: 1\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n"
+  "description": "## Release (2024-09-16)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.3 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#24](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/24) Make second arg of `inc` and `dec` helpers optional ([@charlesfries](https://github.com/charlesfries))\n  * [#23](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/23) Add `includes` and `pick` to template registry ([@charlesfries](https://github.com/charlesfries))\n\n#### Committers: 1\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n"
 }
