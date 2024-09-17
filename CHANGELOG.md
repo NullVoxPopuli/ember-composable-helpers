@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2024-09-17)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.4 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#26](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/26) Add more entries to template registry, update `optional` helper ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 1
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+
 ## Release (2024-09-16)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.3 (patch)
