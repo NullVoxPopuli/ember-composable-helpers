@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2024-09-23)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.5 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#28](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/28) Fix `noop` import typo ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 1
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+
 ## Release (2024-09-17)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.4 (patch)
