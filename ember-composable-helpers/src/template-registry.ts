@@ -25,7 +25,7 @@ import type KeysHelper from './helpers/keys';
 import type MapByHelper from './helpers/map-by';
 import type MapHelper from './helpers/map';
 import type NextHelper from './helpers/next';
-import type NoopHelper from './helpers/next';
+import type NoopHelper from './helpers/noop';
 import type ObjectAtHelper from './helpers/object-at';
 import type OptionalHelper from './helpers/optional';
 import type PickHelper from './helpers/pick';
