@@ -5,6 +5,7 @@ A modern fork of the original utility library.
 template tag `gts/gjs` example:
 
 ```gjs
+// note that importing from this file includes *all* helpers
 import { mapBy, pipe, mut } from '@nullvoxpopuli/ember-composable-helpers';
 
 <template>
@@ -16,6 +17,12 @@ import { mapBy, pipe, mut } from '@nullvoxpopuli/ember-composable-helpers';
   {{/each}}
 </template>
 ```
+
+If you only want one (or a few) utilit(y|ies), you may be interested in the individual exports instead:
+```js
+import { mapBy } from '@nullvoxpopuli/ember-composable-helpers/helpers/map-by';
+```
+these are all the same paths as provided by the original `ember-composable-helpers`
 
 class example:
 
