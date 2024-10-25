@@ -1,5 +1,10 @@
 ### Changelog
 
+
+
+
+
+
 ## Release (2024-09-23)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.5 (patch)
