@@ -5,11 +5,11 @@ import { get } from '@ember/object';
 import isEqual from '../utils/is-equal.ts';
 import asArray from '../utils/as-array.ts';
 
-export function filterBy<T>([byPath, value, array]: [string, T | T[] | undefined, T[]]) {
+export function filterBy<T>([byPath, value, array]: [keyof T, T[keyof T] | T[] | undefined, T[]]) {
 
   let isPresent = true;
   if (!isEmberArray(array) && isEmberArray(value)) {
-    array = value as T[];
+    array = value;
     value = undefined;
     isPresent = false;
   }
