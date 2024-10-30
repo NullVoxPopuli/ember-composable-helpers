@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2024-10-30)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.6 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#32](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/32) fix: make filterBy and mapBy generic, allow any function for pick ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 1
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+
 ## Release (2024-09-23)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.5 (patch)
