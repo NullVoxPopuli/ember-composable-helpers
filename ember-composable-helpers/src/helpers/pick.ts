@@ -1,7 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { get } from '@ember/object';
 
-export function pick([path, action]: [string, (value: unknown) => void]) {
+export function pick([path, action]: [string, (...args: any[]) => void]) {
   return function(event: Event) {
     let value = get(event, path);
 
