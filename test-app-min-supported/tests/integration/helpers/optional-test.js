@@ -26,7 +26,7 @@ module('Integration | Helper | {{optional}}', function(hooks) {
 
   test('Works in a pipe', async function(assert) {
     assert.expect(1);
-    this.actions.check = (value) => assert.equal(value, 42);
+    this.actions.check = (value) => assert.strictEqual(value, 42);
     await render(hbs`
       <button onclick={{action (pipe (action (optional this.handler)) (action "check")) 42}}></button> `);
     await click('button');

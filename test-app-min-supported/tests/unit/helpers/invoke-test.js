@@ -12,7 +12,7 @@ module('Unit | Helper | invoke', function() {
     };
     let action = invoke(['callMom', 1, 2, 3, object]);
 
-    assert.equal(action(), 'calling mom in 1,2,3', 'it calls functions');
+    assert.strictEqual(action(), 'calling mom in 1,2,3', 'it calls functions');
   });
 
   test('it is promise aware', function(assert) {

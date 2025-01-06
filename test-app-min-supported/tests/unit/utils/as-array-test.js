@@ -6,17 +6,17 @@ module('Unit | Utility | as-array', function () {
 
   test('it works for [undefined]', function (assert) {
     let result = asArray();
-    assert.equal(result.length, 0);
+    assert.strictEqual(result.length, 0);
   });
 
   test('it works for [null]', function (assert) {
     let result = asArray(null);
-    assert.equal(result.length, 0);
+    assert.strictEqual(result.length, 0);
   });
 
   test('it works for [Set]', function (assert) {
     let result = asArray(new Set([1, 2, 3]));
-    assert.equal(result.length, 3);
+    assert.strictEqual(result.length, 3);
   });
 
   test('it works for [Map]', function (assert) {
@@ -25,12 +25,12 @@ module('Unit | Utility | as-array', function () {
     map.set(2, 1);
     map.set(3, 1);
     let result = asArray(map);
-    assert.equal(result.length, 3);
+    assert.strictEqual(result.length, 3);
   });
 
   test('it works for [Object]', function (assert) {
     let result = asArray({ a: 1, b: 2, c: 3 });
-    assert.equal(result.length, 3);
+    assert.strictEqual(result.length, 3);
   });
 
   test('it works for [Object.toArray()]', function (assert) {
@@ -39,13 +39,13 @@ module('Unit | Utility | as-array', function () {
         return [1, 2, 3];
       }
     });
-    assert.equal(result.length, 3);
+    assert.strictEqual(result.length, 3);
   });
 
 
   test('it works for [Strings]', function (assert) {
     let result = asArray('abc');
-    assert.equal(result.length, 3);
+    assert.strictEqual(result.length, 3);
   });
 
   test('it not works for number', function (assert) {
@@ -77,13 +77,13 @@ module('Unit | Utility | as-array', function () {
   test('it works for object-like content in array-proxy-like items [arrays]', function (assert) {
     const item = new Promise((r) => r());
     item.content = [1, 2, 3];
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it works for object-like content in array-proxy-like items [objects]', function (assert) {
     const item = new Promise((r) => r());
     item.content = { a: 1, b: 2, c: 3 };
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it works for object-like content in array-proxy-like items [objects toArray]', function (assert) {
@@ -93,18 +93,18 @@ module('Unit | Utility | as-array', function () {
         return [1, 2, 3]
       }
     };
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it works for object-like content in array-proxy-like items [sets]', function (assert) {
     const item = new Promise((r) => r());
     item.content = new Set([1, 2, 3]);
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it works for ember object with toArray property [EmberObject]', function (assert) {
     const item = EmberObject.extend({ toArray() { return [1, 2, 3] } }).create();
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it works for object-like content in array-proxy-like items [maps]', function (assert) {
@@ -113,7 +113,7 @@ module('Unit | Utility | as-array', function () {
     item.content.set(1, 1);
     item.content.set(2, 1);
     item.content.set(3, 1);
-    assert.equal(asArray(item).length, 3);
+    assert.strictEqual(asArray(item).length, 3);
   });
 
   test('it not works for proxy-like object as array', function (assert) {

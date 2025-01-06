@@ -4,13 +4,13 @@ import { isEmpty } from "@ember/utils";
 import getValueArrayAndUseDeepEqualFromParams from "../-private/get-value-array-and-use-deep-equal-from-params.ts";
 
 export function previous<T>(currentValue: T, array: T[], useDeepEqual = false) {
-  let currentIndex = getIndex(array, currentValue, useDeepEqual) as number;
+  let currentIndex = getIndex(array, currentValue, useDeepEqual);
 
   if (isEmpty(currentIndex)) {
     return;
   }
 
-  return currentIndex === 0 ? currentValue : array.at(currentIndex - 1);
+  return currentIndex === 0 ? currentValue : (array.at((currentIndex ?? 0) - 1) ?? null);
 }
 
 export default helper(function <T>(params: [T, boolean | T[], T[]?]) {

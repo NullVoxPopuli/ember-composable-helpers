@@ -57,6 +57,7 @@ function _asArray<T>(maybeArray: unknown): T[] {
     throw new Error('WeakSets is not supported as arrays [ember-composable-helpers]');
   } if (typeof maybeArray === 'object') {
     if (isPromiseProxyLike(maybeArray)) {
+      // eslint-disable-next-line ember/no-get -- TODO: Revisit this
       const content = get(maybeArray, 'content');
       if (typeof content !== 'object' || content === null) {
         throw new Error('Unknown content type in array-like object [ember-composable-helpers]');
