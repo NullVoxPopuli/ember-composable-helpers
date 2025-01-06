@@ -33,8 +33,8 @@ module('Integration | Helper | {{intersect}}', function(hooks) {
       {{~/each~}}
     `);
 
-    run(() => this.get('array2').pushObject('bar'));
-    run(() => this.get('array3').pushObject('bar'));
+    run(() => this.array2.pushObject('bar'));
+    run(() => this.array3.pushObject('bar'));
 
     assert.dom().hasText('foobar', 'bar is added');
   });

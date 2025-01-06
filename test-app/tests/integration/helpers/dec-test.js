@@ -12,7 +12,7 @@ module("Integration | Helper | {{dec}}", function (hooks) {
     assert.dom().hasText("2", "should decrement by 1");
   });
 
-  test("it decrements a value", async function (assert) {
+  test("it decrements a value with amount", async function (assert) {
     await render(hbs`{{dec 2 5}}`);
 
     assert.dom().hasText("3", "should decrement by 2");

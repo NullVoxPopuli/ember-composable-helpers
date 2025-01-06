@@ -50,7 +50,7 @@ module('Integration | Helper | {{includes}}', function(hooks) {
     await render(hbs`{{includes this.selectedGame this.wishlist}}`);
 
     assert.dom().hasText('true', 'should render true');
-    assert.true(!this.wishlist.removeObject, 'should not extend the array with additional functions')
+    assert.strictEqual(this.wishlist.removeObject, undefined, 'should not extend the array with additional functions')
 
     run(() =>
       this.set(

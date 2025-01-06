@@ -49,7 +49,7 @@ module('Integration | Helper | {{append}}', function(hooks) {
       {{~/each~}}
     `);
 
-    run(() => this.get('odds').pushObject(7));
+    run(() => this.odds.pushObject(7));
     assert.dom().hasText('13572', 'new value is added');
   });
 

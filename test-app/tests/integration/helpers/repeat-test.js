@@ -8,7 +8,7 @@ module('Integration | Helper | {{repeat}}', function(hooks) {
 
   test('it repeats `n` times', async function(assert) {
     await render(hbs`
-      {{~#each (repeat 3) as |empty|~}}
+      {{~#each (repeat 3)~}}
         1
       {{~/each~}}
     `);
