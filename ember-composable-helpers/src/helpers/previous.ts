@@ -6,11 +6,11 @@ import getValueArrayAndUseDeepEqualFromParams from "../-private/get-value-array-
 export function previous<T>(currentValue: T, array: T[], useDeepEqual = false) {
   let currentIndex = getIndex(array, currentValue, useDeepEqual);
 
-  if (isEmpty(currentIndex)) {
+  if (!currentIndex || isEmpty(currentIndex)) {
     return;
   }
 
-  return currentIndex === 0 ? currentValue : (array.at((currentIndex ?? 0) - 1) ?? null);
+  return currentIndex === 0 ? currentValue : array.at(currentIndex - 1);
 }
 
 export default helper(function <T>(params: [T, boolean | T[], T[]?]) {
