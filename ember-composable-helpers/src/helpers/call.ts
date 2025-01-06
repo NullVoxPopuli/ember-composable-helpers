@@ -10,10 +10,13 @@ import { helper } from "@ember/component/helper";
   ```
  *
  * @function apply
- * @param {Array<Function>} fn - The function to be called
- * @param {*=} thisArg - An optional `this` context
+ * @param fn The function to be called
+ * @param thisArg An optional `this` context
  */
-export function call([fn, thisArg]: [(...args: never[]) => unknown, unknown?]) {
+export function call<ThisArg, Fn extends ((this: ThisArg) => unknown)>([fn, thisArg]: [fn: Fn, thisArg: ThisArg]): ReturnType<Fn>;
+export function call<Fn extends ((this: never) => unknown)>([fn]: [fn: Fn]): ReturnType<Fn>;
+export function call([fn, thisArg]: [fn?: undefined, thisArg?: unknown]): void;
+export function call([fn, thisArg]: [fn?: (() => unknown) | undefined, thisArg?: unknown]): unknown {
   if (fn) {
     if (thisArg) {
       return fn.apply(thisArg);
