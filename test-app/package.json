@@ -63,6 +63,7 @@
     "eslint-plugin-ember": "^11.12.0",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-qunit": "^8.1.2",
+    "expect-type": "^1.1.0",
     "loader.js": "^4.7.0",
     "qunit": "^2.23.1",
     "qunit-dom": "^3.4.0",
