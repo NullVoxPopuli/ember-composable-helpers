@@ -41,9 +41,10 @@ module('Unit | Utility | is equal', function() {
     },
     {
       label: 'Ember.isEqual applied to firstValue',
+      // eslint-disable-next-line ember/no-classic-classes
       firstValue: EmberObject.extend({
         isEqual(value) {
-          return this.get('value') === value;
+          return this.value === value;
         }
       }).create({ 'value': 10 }),
       secondValue: 10,
@@ -53,9 +54,10 @@ module('Unit | Utility | is equal', function() {
     {
       label: 'Ember.isEqual applied to secondValue',
       firstValue: 10,
+      // eslint-disable-next-line ember/no-classic-classes
       secondValue: EmberObject.extend({
         isEqual(value) {
-          return this.get('value') === value;
+          return this.value === value;
         }
       }).create({ 'value': 10 }),
       useDeepEqual: false,
@@ -66,7 +68,7 @@ module('Unit | Utility | is equal', function() {
   testData.forEach(({ label, firstValue, secondValue, useDeepEqual, expected }) => {
     test(`it works with ${label}`, function(assert) {
       let result = isEqual(firstValue, secondValue, useDeepEqual);
-      assert.equal(result, expected, `should be ${expected}`);
+      assert.strictEqual(result, expected, `should be ${expected}`);
     });
   });
 });

@@ -1,4 +1,3 @@
-import { get } from '@ember/object';
 import { toggle } from 'ember-composable-helpers/helpers/toggle';
 import { module, test } from 'qunit';
 
@@ -8,7 +7,7 @@ module('Unit | Helper | toggle', function() {
     let action = toggle(['isAlive', jimBob]);
     action();
 
-    assert.ok(get(jimBob, 'isAlive') === true, 'should be true');
+    assert.true(jimBob.isAlive, 'should be true');
   });
 
   test('it correctly toggles non-boolean falsey values', function(assert) {
@@ -16,7 +15,7 @@ module('Unit | Helper | toggle', function() {
     let action = toggle(['isAlive', jimBob]);
     action();
 
-    assert.ok(get(jimBob, 'isAlive') === true, 'should be true');
+    assert.true(jimBob.isAlive, 'should be true');
   });
 
   test('it correctly toggles non-boolean truthy values', function(assert) {
@@ -24,6 +23,6 @@ module('Unit | Helper | toggle', function() {
     let action = toggle(['isAlive', jimBob]);
     action();
 
-    assert.ok(get(jimBob, 'isAlive') === false, 'should be false');
+    assert.false(jimBob.isAlive, 'should be false');
   });
 });

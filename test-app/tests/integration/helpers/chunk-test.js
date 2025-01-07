@@ -117,7 +117,7 @@ module('Integration | Helper | {{chunk}}', function(hooks) {
 
     assert.dom().hasText('12 34', 'chunked arrays are displayed');
 
-    run(() => this.get('array').pushObjects(['some', 'new', 'items']));
+    run(() => this.array.pushObjects(['some', 'new', 'items']));
 
     assert.dom().hasText('12 34 somenew items', 'updated chunked arrays are displayed');
   });

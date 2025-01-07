@@ -42,7 +42,7 @@ module('Unit | Utility | is promise', function() {
     test('it checks if an object is an instance of an RSVP.Promise', function(assert) {
       let result = isPromise(value);
 
-      assert.equal(result, expected, `should be ${expected}`);
+      assert.strictEqual(result, expected, `should be ${expected}`);
     });
   });
 });

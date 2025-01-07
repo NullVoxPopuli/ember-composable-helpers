@@ -34,7 +34,7 @@ module('Integration | Helper | {{object-at}}', function(hooks) {
 
     assert.dom().hasText('oranges', 'the original object is display');
 
-    run(() => this.get('array').removeAt(1, 1));
+    run(() => this.array.removeAt(1, 1));
 
     assert.dom().hasText('bananas', 'the new object is displayed');
   });

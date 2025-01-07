@@ -36,7 +36,9 @@ function sortDesc<T>(key: string, a: T, b: T) {
     return 0;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const aValue = safeValueForKey(a, key) as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const bValue = safeValueForKey(b, key) as any;
 
   const isANullable = typeof aValue == 'undefined' || aValue === null;
@@ -74,7 +76,9 @@ function sortAsc<T>(key: string, a: T, b: T) {
     return 0;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const aValue = safeValueForKey(a, key) as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const bValue = safeValueForKey(b, key) as any;
 
   const isANullable = typeof aValue == 'undefined' || aValue === null;

@@ -10,7 +10,7 @@ module("Integration | Helper | pick", function (hooks) {
     assert.expect(1);
 
     this.set("click", function (value) {
-      assert.equal(
+      assert.strictEqual(
         value,
         "pizza party",
         "The action receives the correct value",
@@ -32,7 +32,7 @@ module("Integration | Helper | pick", function (hooks) {
     assert.expect(1);
 
     this.set("click", function (value) {
-      assert.equal(
+      assert.strictEqual(
         value,
         "pizza party",
         "The action receives the correct value",

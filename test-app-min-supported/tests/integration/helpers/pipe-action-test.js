@@ -21,10 +21,10 @@ module('Integration | Helper | {{pipe-action}}', function(hooks) {
       {{/let}}
     `);
 
-    assert.equal(value, '0', 'precond - should render 0');
+    assert.strictEqual(value, 0, 'precond - should return 0');
 
     await click('button');
 
-    assert.equal(value, '6', 'should render 6');
+    assert.strictEqual(value, 6, 'should return 6');
   });
 });

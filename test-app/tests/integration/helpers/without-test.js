@@ -57,7 +57,7 @@ module("Integration | Helper | {{without}}", function (hooks) {
 
     assert.dom().hasText("foobarbaz", "should render all values");
 
-    run(() => this.get("items").pushObject("quux"));
+    run(() => this.items.pushObject("quux"));
     assert.dom().hasText("foobarbaz", "should not render quux");
   });
 

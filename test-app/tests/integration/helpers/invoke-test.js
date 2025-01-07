@@ -21,7 +21,7 @@ module('Integration | Helper | {{invoke}}', function(hooks) {
 
     await render(hbs`
       <p>{{this.value}}</p>
-      <button {{action (pipe (invoke "serverSideComputation" 2 this) (action "setValue"))}}>
+      <button type="button" {{action (pipe (invoke "serverSideComputation" 2 this) (action "setValue"))}}>
         Calculate
       </button>
     `);
@@ -48,7 +48,7 @@ module('Integration | Helper | {{invoke}}', function(hooks) {
 
     await render(hbs`
       <p>{{this.value}}</p>
-      <button {{action (pipe (invoke "calcArea" this.model) (action "sumAreas"))}}>
+      <button type="button" {{action (pipe (invoke "calcArea" this.model) (action "sumAreas"))}}>
         Calculate
       </button>
     `);

@@ -9,16 +9,16 @@
   "author": "",
   "scripts": {
     "build": "pnpm --filter ember-composable-helpers build",
-    "lint": "pnpm --filter --if-present lint",
-    "lint:fix": "pnpm --filter --if-present lint:fix",
+    "lint": "pnpm -r --if-present lint",
+    "lint:fix": "pnpm -r --if-present lint:fix",
     "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-composable-helpers start --no-watch.clearScreen",
     "start:test-app": "pnpm --filter test-app start",
-    "test": "pnpm --workspaces --if-present test"
+    "test": "pnpm -r --workspace-concurrency=1 --if-present test"
   },
   "devDependencies": {
-    "@glint/core": "^1.4.0",
-    "concurrently": "^8.2.1",
+    "@glint/core": "^1.5.0",
+    "concurrently": "^9.1.2",
     "release-plan": "^0.9.0"
   },
   "packageManager": "pnpm@9.0.6",

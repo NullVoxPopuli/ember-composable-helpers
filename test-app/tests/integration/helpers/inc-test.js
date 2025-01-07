@@ -12,7 +12,7 @@ module("Integration | Helper | {{inc}}", function (hooks) {
     assert.dom().hasText("2", "should increment by 1");
   });
 
-  test("it increments a value", async function (assert) {
+  test("it increments a value with amount", async function (assert) {
     await render(hbs`{{inc 2 1}}`);
 
     assert.dom().hasText("3", "should increment by 2");

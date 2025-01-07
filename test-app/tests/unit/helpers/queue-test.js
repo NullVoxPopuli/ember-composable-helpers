@@ -57,7 +57,7 @@ module('Unit | Helper | queue', function(hooks) {
     let result = queued(2, 4);
 
     result.then((resolved) => {
-      assert.equal(resolved, null, 'it is promise aware');
+      assert.strictEqual(resolved, null, 'it is promise aware');
       done();
     });
   });
@@ -69,7 +69,7 @@ module('Unit | Helper | queue', function(hooks) {
     queued(2, 4)
       .catch(function() {})
       .finally(() => {
-        assert.equal(step1.callCount, 0, 'should abort the chain');
+        assert.strictEqual(step1.callCount, 0, 'should abort the chain');
         done();
       });
   });

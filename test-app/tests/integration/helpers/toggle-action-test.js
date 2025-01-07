@@ -11,7 +11,7 @@ module('Integration | Helper | {{toggle-action}}', function(hooks) {
 
     await render(hbs`
       <p>{{if this.isExpanded "I am expanded" "I am not"}}</p>
-      <button {{on "click" (toggle "isExpanded" this)}}>
+      <button type="button" {{on "click" (toggle "isExpanded" this)}}>
         Toggle
       </button>
     `);

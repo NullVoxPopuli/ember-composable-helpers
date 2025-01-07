@@ -58,7 +58,7 @@ module('Integration | Helper | {{shuffle}}', function(hooks) {
     `);
 
     assert.dom().hasText('2341', 'array is shuffled');
-    assert.deepEqual(this.get('array'), [1, 2, 3, 4], 'the original array is not shuffled');
+    assert.deepEqual(this.array, [1, 2, 3, 4], 'the original array is not shuffled');
   });
 
   test('It gracefully handles non-array values', async function(assert) {

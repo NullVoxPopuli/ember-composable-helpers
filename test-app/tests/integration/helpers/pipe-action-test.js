@@ -15,16 +15,16 @@ module('Integration | Helper | {{pipe-action}}', function(hooks) {
 
     await render(hbs`
       {{#let (pipe-action this.add this.square this.squareRoot) as |calculate|}}
-        <button {{on "click" (fn calculate 2 4)}}>
+        <button type="button" {{on "click" (fn calculate 2 4)}}>
           Calculate
         </button>
       {{/let}}
     `);
 
-    assert.equal(value, '0', 'precond - should render 0');
+    assert.strictEqual(value, 0, 'precond - should return 0');
 
     await click('button');
 
-    assert.equal(value, '6', 'should render 6');
+    assert.strictEqual(value, 6, 'should return 6');
   });
 });

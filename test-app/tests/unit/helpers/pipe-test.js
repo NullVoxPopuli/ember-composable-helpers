@@ -34,14 +34,14 @@ module('Unit | Helper | pipe', function(hooks) {
     let piped = pipe([add, square, Math.sqrt]);
     let result = piped(2, 4);
 
-    assert.equal(result, 6, 'it pipes functions together');
+    assert.strictEqual(result, 6, 'it pipes functions together');
   });
 
   test('first function is variadic, rest are unary', function(assert) {
     let piped = pipe([add, square, Math.sqrt, thinger, countArgs]);
     let result = piped(2, 4);
 
-    assert.equal(result, 1, 'should receive 1 arg for last function');
+    assert.strictEqual(result, 1, 'should receive 1 arg for last function');
   });
 
   test('it is promise aware', function(assert) {
@@ -50,7 +50,7 @@ module('Unit | Helper | pipe', function(hooks) {
     let result = piped(2, 4);
 
     result.then((resolved) => {
-      assert.equal(resolved, 6, 'it is promise aware');
+      assert.strictEqual(resolved, 6, 'it is promise aware');
       done();
     });
   });
@@ -63,7 +63,7 @@ module('Unit | Helper | pipe', function(hooks) {
     piped(2, 4)
       .catch(function() {})
       .finally(() => {
-        assert.equal(spy.callCount, 0, 'should abort the chain');
+        assert.strictEqual(spy.callCount, 0, 'should abort the chain');
         done();
       });
   });

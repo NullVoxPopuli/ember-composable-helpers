@@ -27,7 +27,7 @@ module('Unit | Utility | is object', function() {
   testData.forEach(({ label, value, expected }) => {
     test(`it works with ${label}`, function(assert) {
       let result = isObject(value);
-      assert.equal(result, expected, `should be ${expected}`);
+      assert.strictEqual(result, expected, `should be ${expected}`);
     });
   });
 });

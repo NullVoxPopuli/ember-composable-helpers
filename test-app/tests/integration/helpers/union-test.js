@@ -33,7 +33,7 @@ module('Integration | Helper | {{union}}', function(hooks) {
       {{~/each~}}
     `);
 
-    run(() => this.get('array1').pushObject('leet'));
+    run(() => this.array1.pushObject('leet'));
 
     assert.dom().hasText('foobarleetbazqux', 'leet is added');
   });

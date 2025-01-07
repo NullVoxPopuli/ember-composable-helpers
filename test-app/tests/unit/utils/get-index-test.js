@@ -34,12 +34,12 @@ module('Unit | Utility | get index', function() {
   testData.forEach(({ label, array, item, expected, useDeepEqual }) => {
     test(`it works with ${label}`, function(assert) {
       let result = getIndex(array, item, useDeepEqual);
-      assert.equal(result, expected, `should be ${expected}`);
+      assert.strictEqual(result, expected, `should be ${expected}`);
     });
   });
 
   test('it returns null if the given value is not in the array', function(assert) {
     let result = getIndex([1, 2, 3], 4);
-    assert.equal(result, null, 'should be null');
+    assert.strictEqual(result, null, 'should be null');
   });
 });
