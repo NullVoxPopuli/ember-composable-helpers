@@ -9,7 +9,7 @@ export function next<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) 
   const currentIndex = getIndex(array, currentValue, useDeepEqual);
   const lastIndex = array.length - 1;
 
-  if (!currentIndex || isEmpty(currentIndex)) {
+  if (null === currentIndex || isEmpty(currentIndex)) {
     return;
   }
 

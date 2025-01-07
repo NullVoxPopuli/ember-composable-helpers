@@ -17,8 +17,8 @@
     "test": "pnpm -r --workspace-concurrency=1 --if-present test"
   },
   "devDependencies": {
-    "@glint/core": "^1.4.0",
-    "concurrently": "^8.2.1",
+    "@glint/core": "^1.5.0",
+    "concurrently": "^9.1.2",
     "release-plan": "^0.9.0"
   },
   "packageManager": "pnpm@9.0.6",

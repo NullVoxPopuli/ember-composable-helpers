@@ -24,22 +24,22 @@
     "Marten Schilstra <mail@martenschilstra.nl>"
   ],
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-decorators": "^7.22.15",
-    "@babel/plugin-transform-class-properties": "^7.22.5",
-    "@babel/plugin-transform-typescript": "^7.23.6",
-    "@babel/runtime": "^7.22.15",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-proposal-decorators": "^7.25.9",
+    "@babel/plugin-transform-class-properties": "^7.25.9",
+    "@babel/plugin-transform-typescript": "^7.26.3",
+    "@babel/runtime": "^7.26.0",
     "@embroider/addon-dev": "^4.1.0",
-    "@glint/core": "^1.2.1",
-    "@glint/environment-ember-loose": "^1.2.1",
-    "@glint/environment-ember-template-imports": "^1.2.1",
-    "@glint/template": "^1.2.1",
+    "@glint/core": "^1.5.0",
+    "@glint/environment-ember-loose": "^1.5.0",
+    "@glint/environment-ember-template-imports": "^1.5.0",
+    "@glint/template": "^1.5.0",
     "@rollup/plugin-babel": "^6.0.3",
     "@tsconfig/ember": "^3.0.2",
     "@types/rsvp": "^4.0.9",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
-    "concurrently": "^8.2.1",
+    "concurrently": "^9.1.2",
     "ember-source": "~5.8.0",
     "ember-template-lint": "^6.0.0",
     "eslint-plugin-node": "^10.0.0",
@@ -64,7 +64,7 @@
   "license": "MIT",
   "author": "The Ember Community",
   "dependencies": {
-    "@embroider/addon-shim": "^1.8.8"
+    "@embroider/addon-shim": "^1.9.0"
   },
   "exports": {
     ".": {

@@ -6,7 +6,7 @@ import getValueArrayAndUseDeepEqualFromParams from "../-private/get-value-array-
 export function previous<T>(currentValue: T, array: T[], useDeepEqual = false) {
   let currentIndex = getIndex(array, currentValue, useDeepEqual);
 
-  if (!currentIndex || isEmpty(currentIndex)) {
+  if (null === currentIndex || isEmpty(currentIndex)) {
     return;
   }
 
