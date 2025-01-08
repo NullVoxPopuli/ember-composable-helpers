@@ -1,5 +1,28 @@
 ### Changelog
 
+## Release (2025-01-08)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.7 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#37](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/37) Declare call, compute, and invoke as deprecated ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#34](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/34) Fix compute types and add type tests ([@wagenet](https://github.com/wagenet))
+  * [#35](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/35) Fix types, workspace scripts, and linting ([@wagenet](https://github.com/wagenet))
+
+#### :memo: Documentation
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#37](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/37) Declare call, compute, and invoke as deprecated ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#35](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/35) Fix types, workspace scripts, and linting ([@wagenet](https://github.com/wagenet))
+
+#### Committers: 2
+- Peter Wagenet ([@wagenet](https://github.com/wagenet))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-10-30)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.6 (patch)
