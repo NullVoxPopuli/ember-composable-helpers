@@ -5,6 +5,11 @@ import type { AnyVoidFn } from '../utils/types';
 
 const { all } = RSVP;
 
+/**
+ * @deprecated since ember 3.25 (with polyfill) and ember 4.5, this utility is not needed as functions can be directly invoked
+ *
+ * Invokes a method on an object, or on each object of an array
+ */
 export function invoke<K extends PropertyKey, T extends Record<K, AnyVoidFn>>([methodName, ...args]: [K, T, ...unknown[]]) {
   let obj = args.pop() as T | T[];
 
