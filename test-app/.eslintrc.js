@@ -50,5 +50,12 @@ module.exports = {
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
     },
+    {
+      // type tests
+      files: ['tests/types/**'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    }
   ],
 };
