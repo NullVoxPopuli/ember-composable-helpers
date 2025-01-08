@@ -1,5 +1,3 @@
-import { helper } from "@ember/component/helper";
-
 /**
  * Calls a function passed within a template and returns its value.
  * In order to pass arguments to the function being called, you must
@@ -10,10 +8,13 @@ import { helper } from "@ember/component/helper";
   ```
  *
  * @function apply
- * @param {Array<Function>} fn - The function to be called
- * @param {*=} thisArg - An optional `this` context
+ * @param fn The function to be called
+ * @param thisArg An optional `this` context
  */
-export function call([fn, thisArg]: [(...args: never[]) => unknown, unknown?]) {
+export function call<ThisArg, Fn extends ((this: ThisArg) => unknown)>([fn, thisArg]: [fn: Fn, thisArg: ThisArg]): ReturnType<Fn>;
+export function call<Fn extends ((this: never) => unknown)>([fn]: [fn: Fn]): ReturnType<Fn>;
+export function call([fn, thisArg]: [fn?: undefined, thisArg?: unknown]): void;
+export function call([fn, thisArg]: [fn?: (() => unknown) | undefined, thisArg?: unknown]): unknown {
   if (fn) {
     if (thisArg) {
       return fn.apply(thisArg);
@@ -23,4 +24,10 @@ export function call([fn, thisArg]: [(...args: never[]) => unknown, unknown?]) {
   }
 }
 
-export default helper(call);
+export default function callHelper<ThisArg, Fn extends ((this: ThisArg) => unknown)>(fn: Fn, thisArg: ThisArg): ReturnType<Fn>;
+export default function callHelper<Fn extends ((this: never) => unknown)>(fn: Fn): ReturnType<Fn>;
+export default function callHelper(fn?: undefined, thisArg?: unknown): void;
+export default function callHelper(fn?: () => unknown | undefined, thisArg?: unknown) {
+  // @ts-expect-error -- This is fine, but TS doesn't like it with the overrides
+  return call([fn, thisArg]);
+}

@@ -23,6 +23,9 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.9.0
         version: 1.9.0
+      ember-functions-as-helper-polyfill:
+        specifier: ^2.1.2
+        version: 2.1.2(ember-source@5.8.0(@babel/core@7.26.0)(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.91.0))
     devDependencies:
       '@babel/core':
         specifier: ^7.26.0
@@ -216,6 +219,9 @@ importers:
       eslint-plugin-qunit:
         specifier: ^8.1.2
         version: 8.1.2(eslint@8.57.0)
+      expect-type:
+        specifier: ^1.1.0
+        version: 1.1.0
       loader.js:
         specifier: ^4.7.0
         version: 4.7.0
@@ -240,6 +246,9 @@ importers:
       webpack:
         specifier: ^5.91.0
         version: 5.91.0
+    dependenciesMeta:
+      '@nullvoxpopuli/ember-composable-helpers':
+        injected: true
 
   test-app-min-supported:
     devDependencies:
@@ -263,7 +272,7 @@ importers:
         version: 1.1.2(@babel/core@7.26.0)
       '@nullvoxpopuli/ember-composable-helpers':
         specifier: workspace:*
-        version: link:../ember-composable-helpers
+        version: file:ember-composable-helpers(ember-source@3.28.12(@babel/core@7.26.0))
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@5.16.0)
@@ -360,6 +369,9 @@ importers:
       webpack:
         specifier: ^5.64.4
         version: 5.91.0
+    dependenciesMeta:
+      '@nullvoxpopuli/ember-composable-helpers':
+        injected: true
 
   test-app-min-supported-classic:
     devDependencies:
@@ -383,7 +395,7 @@ importers:
         version: 1.1.2(@babel/core@7.26.0)
       '@nullvoxpopuli/ember-composable-helpers':
         specifier: workspace:*
-        version: link:../ember-composable-helpers
+        version: file:ember-composable-helpers(ember-source@3.28.12(@babel/core@7.26.0))
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@5.16.0)
@@ -480,6 +492,9 @@ importers:
       webpack:
         specifier: ^5.64.4
         version: 5.91.0
+    dependenciesMeta:
+      '@nullvoxpopuli/ember-composable-helpers':
+        injected: true
 
 packages:
 
@@ -2088,6 +2103,9 @@ packages:
   '@npmcli/promise-spawn@7.0.2':
     resolution: {integrity: sha512-xhfYPXoV5Dy4UkY0D+v2KkwvnDfiA/8Mt3sWCGI/hM03NsYIH8ZaG6QzS9x7pje5vHZBZJ2v6VRFVTWACnqcmQ==}
     engines: {node: ^16.14.0 || >=18.0.0}
+
+  '@nullvoxpopuli/ember-composable-helpers@file:ember-composable-helpers':
+    resolution: {directory: ember-composable-helpers, type: directory}
 
   '@octokit/auth-token@3.0.4':
     resolution: {integrity: sha512-TWFX7cZF2LXoCvdmJWY7XVPi74aSY0+FfBZNSXEXFkMpjcqsQwDSYVv5FhRFaI0V1ECnwbz4j59T/G+rXNWaIQ==}
@@ -4584,6 +4602,10 @@ packages:
     resolution: {integrity: sha512-lo5YArbJzJi5ssvaGqTt6+FnhTALnSvYVuxM7lfyL1UCMudyNJ94ovH5C7n5il7ATd6WsNiAPRUO/v+s5Jq/aA==}
     engines: {node: 8.* || >= 10.*}
 
+  ember-cli-typescript@5.3.0:
+    resolution: {integrity: sha512-gFA+ZwmsvvFwo2Jz/B9GMduEn+fPoGb69qWGP0Tp3+Tu5xypDtIKVSZ5086I3Cr19cLXD4HkrOR3YQvdUKzAkQ==}
+    engines: {node: '>= 12.*'}
+
   ember-cli-version-checker@2.2.0:
     resolution: {integrity: sha512-G+KtYIVlSOWGcNaTFHk76xR4GdzDLzAS4uxZUKdASuFX0KJE43C6DaqL+y3VTpUFLI2FIkAS6HZ4I1YBi+S3hg==}
     engines: {node: '>= 4'}
@@ -4629,6 +4651,12 @@ packages:
   ember-export-application-global@2.0.1:
     resolution: {integrity: sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==}
     engines: {node: '>= 4'}
+
+  ember-functions-as-helper-polyfill@2.1.2:
+    resolution: {integrity: sha512-yvW6xykvZEIYzzwlrC/g9yu6LtLkkj5F+ho6U+BDxN1uREMgoMOZnji7sSILn5ITVpaJ055DPcO+utEFD7IZOA==}
+    engines: {node: '>= 14.0.0'}
+    peerDependencies:
+      ember-source: ^3.25.0 || >=4.0.0
 
   ember-load-initializers@3.0.1:
     resolution: {integrity: sha512-qV3vxJKw5+7TVDdtdLPy8PhVsh58MlK8jwzqh5xeOwJPNP7o0+BlhvwoIlLYTPzGaHdfjEIFCgVSyMRGd74E1g==}
@@ -5088,6 +5116,10 @@ packages:
   expand-tilde@2.0.2:
     resolution: {integrity: sha512-A5EmesHW6rfnZ9ysHQjPdJRni0SRar0tjtG5MNtm9n5TUvsYU8oozprtRD4AqHxcZWWlVuAmQo2nWKfN9oyjTw==}
     engines: {node: '>=0.10.0'}
+
+  expect-type@1.1.0:
+    resolution: {integrity: sha512-bFi65yM+xZgk+u/KRIpekdSYkTB5W1pEf0Lt8Q8Msh7b+eQ7LXVtIB1Bkm4fvclDEL1b2CZkMhv2mOeF8tMdkA==}
+    engines: {node: '>=12.0.0'}
 
   express@4.19.2:
     resolution: {integrity: sha512-5T6nhjsT+EOMzuck8JjBHARTHfMht0POzlA60WV2pMD3gyXw2LZnZ+ueGdNxG+0calOJcWKbpFcuzLZ91YWq9Q==}
@@ -11249,7 +11281,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.5
       '@babel/parser': 7.24.5
       '@babel/types': 7.24.5
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -11384,7 +11416,7 @@ snapshots:
       calculate-cache-key-for-tree: 2.0.0
       ember-cli-babel: 7.26.11
       ember-cli-version-checker: 5.1.2
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
@@ -11491,7 +11523,7 @@ snapshots:
       broccoli-persistent-filter: 3.1.3
       broccoli-plugin: 4.0.7
       broccoli-source: 3.0.1
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       fast-sourcemap-concat: 1.4.0
       filesize: 10.1.2
       fs-extra: 9.1.0
@@ -11500,7 +11532,7 @@ snapshots:
       js-string-escape: 1.0.1
       jsdom: 16.7.0
       lodash: 4.17.21
-      resolve: 1.22.8
+      resolve: 1.22.10
       resolve-package-path: 4.0.3
       typescript-memoize: 1.1.1
       walk-sync: 3.0.0
@@ -11558,8 +11590,8 @@ snapshots:
       ember-cli-babel: 7.26.11
       find-up: 5.0.0
       lodash: 4.17.21
-      resolve: 1.22.8
-      semver: 7.6.2
+      resolve: 1.22.10
+      semver: 7.6.3
     optionalDependencies:
       '@glint/template': 1.5.0
     transitivePeerDependencies:
@@ -11712,7 +11744,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -12216,7 +12248,7 @@ snapshots:
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -12311,7 +12343,7 @@ snapshots:
   '@npmcli/fs@1.1.1':
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.6.2
+      semver: 7.6.3
 
   '@npmcli/git@5.0.7':
     dependencies:
@@ -12321,7 +12353,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-retry: 2.0.1
-      semver: 7.6.2
+      semver: 7.6.3
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -12339,13 +12371,21 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.1
       proc-log: 4.2.0
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - bluebird
 
   '@npmcli/promise-spawn@7.0.2':
     dependencies:
       which: 4.0.0
+
+  '@nullvoxpopuli/ember-composable-helpers@file:ember-composable-helpers(ember-source@3.28.12(@babel/core@7.26.0))':
+    dependencies:
+      '@embroider/addon-shim': 1.9.0
+      ember-functions-as-helper-polyfill: 2.1.2(ember-source@3.28.12(@babel/core@7.26.0))
+    transitivePeerDependencies:
+      - ember-source
+      - supports-color
 
   '@octokit/auth-token@3.0.4': {}
 
@@ -12872,7 +12912,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.3)
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.5.3)
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.5.3)
     optionalDependencies:
@@ -12884,7 +12924,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.3)
       '@typescript-eslint/utils': 6.21.0(eslint@9.17.0)(typescript@5.5.3)
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       eslint: 9.17.0
       ts-api-utils: 1.3.0(typescript@5.5.3)
     optionalDependencies:
@@ -12898,11 +12938,11 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.6.2
+      semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.3)
     optionalDependencies:
       typescript: 5.5.3
@@ -12918,7 +12958,7 @@ snapshots:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.3)
       eslint: 8.57.0
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -12932,7 +12972,7 @@ snapshots:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.3)
       eslint: 9.17.0
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -13170,7 +13210,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -13701,7 +13741,7 @@ snapshots:
       glob: 7.2.3
       pkg-up: 3.1.0
       reselect: 4.1.8
-      resolve: 1.22.8
+      resolve: 1.22.10
 
   babel-plugin-module-resolver@5.0.2:
     dependencies:
@@ -14398,7 +14438,7 @@ snapshots:
     dependencies:
       array-equal: 1.0.2
       broccoli-plugin: 4.0.7
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       fs-tree-diff: 2.0.1
       heimdalljs: 0.2.6
       minimatch: 3.1.2
@@ -14591,7 +14631,7 @@ snapshots:
       ensure-posix-path: 1.1.1
       fs-extra: 8.1.0
       minimatch: 3.1.2
-      resolve: 1.22.8
+      resolve: 1.22.10
       rsvp: 4.8.5
       symlink-or-copy: 1.3.1
       walk-sync: 1.1.4
@@ -14736,7 +14776,7 @@ snapshots:
 
   builtins@5.1.0:
     dependencies:
-      semver: 7.6.2
+      semver: 7.6.3
 
   bytes@1.0.0: {}
 
@@ -15688,7 +15728,7 @@ snapshots:
       '@babel/plugin-transform-class-static-block': 7.24.4(@babel/core@7.26.0)
       '@babel/preset-env': 7.24.5(@babel/core@7.26.0)
       '@embroider/macros': 1.16.1(@glint/template@1.5.0)
-      '@embroider/shared-internals': 2.6.0
+      '@embroider/shared-internals': 2.8.1(supports-color@8.1.1)
       babel-loader: 8.3.0(@babel/core@7.26.0)(webpack@5.91.0)
       babel-plugin-ember-modules-api-polyfill: 3.5.0
       babel-plugin-ember-template-compilation: 2.2.5
@@ -15700,7 +15740,7 @@ snapshots:
       broccoli-plugin: 4.0.7
       broccoli-source: 3.0.1
       css-loader: 5.2.7(webpack@5.91.0)
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       fs-extra: 10.1.0
       fs-tree-diff: 2.0.1
       handlebars: 4.7.8
@@ -15709,9 +15749,9 @@ snapshots:
       mini-css-extract-plugin: 2.9.0(webpack@5.91.0)
       minimatch: 3.1.2
       parse5: 6.0.1
-      resolve: 1.22.8
+      resolve: 1.22.10
       resolve-package-path: 4.0.3
-      semver: 7.6.2
+      semver: 7.6.3
       style-loader: 2.0.0(webpack@5.91.0)
       typescript-memoize: 1.1.1
       walk-sync: 3.0.0
@@ -15871,7 +15911,7 @@ snapshots:
       hash-for-dep: 1.5.1
       heimdalljs-logger: 0.1.10
       js-string-escape: 1.0.1
-      semver: 7.6.2
+      semver: 7.6.3
       silent-error: 1.1.1
       walk-sync: 2.2.0
     transitivePeerDependencies:
@@ -15955,17 +15995,32 @@ snapshots:
     dependencies:
       '@babel/plugin-transform-typescript': 7.5.5(@babel/core@7.26.0)
       ansi-to-html: 0.6.15
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       ember-cli-babel-plugin-helpers: 1.1.1
       execa: 2.1.0
       fs-extra: 8.1.0
-      resolve: 1.22.8
+      resolve: 1.22.10
       rsvp: 4.8.5
       semver: 6.3.1
       stagehand: 1.0.1
       walk-sync: 2.2.0
     transitivePeerDependencies:
       - '@babel/core'
+      - supports-color
+
+  ember-cli-typescript@5.3.0:
+    dependencies:
+      ansi-to-html: 0.6.15
+      broccoli-stew: 3.0.0
+      debug: 4.4.0(supports-color@8.1.1)
+      execa: 4.1.0
+      fs-extra: 9.1.0
+      resolve: 1.22.10
+      rsvp: 4.8.5
+      semver: 7.6.3
+      stagehand: 1.0.1
+      walk-sync: 2.2.0
+    transitivePeerDependencies:
       - supports-color
 
   ember-cli-version-checker@2.2.0:
@@ -15989,7 +16044,7 @@ snapshots:
   ember-cli-version-checker@5.1.2:
     dependencies:
       resolve-package-path: 3.1.0
-      semver: 7.6.2
+      semver: 7.6.3
       silent-error: 1.1.1
     transitivePeerDependencies:
       - supports-color
@@ -16319,6 +16374,24 @@ snapshots:
       - supports-color
 
   ember-export-application-global@2.0.1: {}
+
+  ember-functions-as-helper-polyfill@2.1.2(ember-source@3.28.12(@babel/core@7.26.0)):
+    dependencies:
+      ember-cli-babel: 7.26.11
+      ember-cli-typescript: 5.3.0
+      ember-cli-version-checker: 5.1.2
+      ember-source: 3.28.12(@babel/core@7.26.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  ember-functions-as-helper-polyfill@2.1.2(ember-source@5.8.0(@babel/core@7.26.0)(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.91.0)):
+    dependencies:
+      ember-cli-babel: 7.26.11
+      ember-cli-typescript: 5.3.0
+      ember-cli-version-checker: 5.1.2
+      ember-source: 5.8.0(@babel/core@7.26.0)(@glimmer/component@2.0.0)(@glint/template@1.5.0)(rsvp@4.8.5)(webpack@5.91.0)
+    transitivePeerDependencies:
+      - supports-color
 
   ember-load-initializers@3.0.1(ember-source@3.28.12(@babel/core@7.26.0)):
     dependencies:
@@ -16669,7 +16742,7 @@ snapshots:
       lodash: 4.17.21
       package-json: 6.5.0
       remote-git-tags: 3.0.0
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - encoding
 
@@ -16863,7 +16936,7 @@ snapshots:
   eslint-compat-utils@0.5.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-      semver: 7.6.2
+      semver: 7.6.3
 
   eslint-formatter-kakoune@1.0.0: {}
 
@@ -17184,7 +17257,7 @@ snapshots:
 
   execa@2.1.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 5.2.0
       is-stream: 2.0.1
       merge-stream: 2.0.0
@@ -17208,7 +17281,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -17237,6 +17310,8 @@ snapshots:
   expand-tilde@2.0.2:
     dependencies:
       homedir-polyfill: 1.0.3
+
+  expect-type@1.1.0: {}
 
   express@4.19.2:
     dependencies:
@@ -17580,7 +17655,7 @@ snapshots:
 
   foreground-child@3.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   form-data@3.0.1:
@@ -18086,7 +18161,7 @@ snapshots:
       heimdalljs: 0.2.6
       heimdalljs-logger: 0.1.10
       path-root: 0.1.1
-      resolve: 1.22.8
+      resolve: 1.22.10
       resolve-package-path: 1.2.7
     transitivePeerDependencies:
       - supports-color
@@ -19535,7 +19610,7 @@ snapshots:
     dependencies:
       growly: 1.3.0
       is-wsl: 2.2.0
-      semver: 7.6.2
+      semver: 7.6.3
       shellwords: 0.1.1
       uuid: 8.3.2
       which: 2.0.2
@@ -19560,8 +19635,8 @@ snapshots:
   normalize-package-data@6.0.1:
     dependencies:
       hosted-git-info: 7.0.2
-      is-core-module: 2.13.1
-      semver: 7.6.2
+      is-core-module: 2.16.1
+      semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
@@ -19574,7 +19649,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.6.2
+      semver: 7.6.3
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -19582,20 +19657,20 @@ snapshots:
     dependencies:
       hosted-git-info: 6.1.1
       proc-log: 3.0.0
-      semver: 7.6.2
+      semver: 7.6.3
       validate-npm-package-name: 5.0.1
 
   npm-package-arg@11.0.2:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.6.2
+      semver: 7.6.3
       validate-npm-package-name: 5.0.1
 
   npm-package-arg@8.1.5:
     dependencies:
       hosted-git-info: 4.1.0
-      semver: 7.6.2
+      semver: 7.6.3
       validate-npm-package-name: 3.0.0
 
   npm-pick-manifest@9.0.1:
@@ -19603,7 +19678,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.2
-      semver: 7.6.2
+      semver: 7.6.3
 
   npm-run-path@2.0.2:
     dependencies:
@@ -20433,7 +20508,7 @@ snapshots:
 
   resolve@1.22.8:
     dependencies:
-      is-core-module: 2.13.1
+      is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
@@ -20947,7 +21022,7 @@ snapshots:
 
   stagehand@1.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -21195,7 +21270,7 @@ snapshots:
 
   sync-disk-cache@2.1.0:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       heimdalljs: 0.2.6
       mkdirp: 0.5.6
       rimraf: 3.0.2
