@@ -52,7 +52,7 @@ module.exports = {
     },
     {
       // type tests
-      files: ['tests/types/**'],
+      files: ['type-tests/**'],
       rules: {
         '@typescript-eslint/no-unused-vars': 'off',
       },
