@@ -3,7 +3,7 @@ import { isEmpty } from '@ember/utils';
 import { get } from "@ember/object";
 import asArray from '../utils/as-array.ts';
 
-export function findBy<T>([byPath, value, array]: [keyof T, T[keyof T], T[]]) {
+export function findBy<T>([byPath, value, array]: [keyof T, T[keyof T], T[]]): : T | undefined {
   if (isEmpty(byPath)) {
     return undefined;
   }
