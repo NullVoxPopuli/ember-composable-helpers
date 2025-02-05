@@ -2,24 +2,16 @@
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
       "impact": "patch",
-      "oldVersion": "5.2.6",
-      "newVersion": "5.2.7",
+      "oldVersion": "5.2.7",
+      "newVersion": "5.2.8",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-01-08)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.7 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#37](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/37) Declare call, compute, and invoke as deprecated ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#34](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/34) Fix compute types and add type tests ([@wagenet](https://github.com/wagenet))\n  * [#35](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/35) Fix types, workspace scripts, and linting ([@wagenet](https://github.com/wagenet))\n\n#### :memo: Documentation\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#37](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/37) Declare call, compute, and invoke as deprecated ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#35](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/35) Fix types, workspace scripts, and linting ([@wagenet](https://github.com/wagenet))\n\n#### Committers: 2\n- Peter Wagenet ([@wagenet](https://github.com/wagenet))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-02-05)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.8 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#40](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/40) Make \"pick\" helper types less restrictive ([@dknutsen](https://github.com/dknutsen))\n\n#### :memo: Documentation\n* [#42](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/42) Update README.md to have a note about not needing this library in brand new projects ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- Dan Knutsen ([@dknutsen](https://github.com/dknutsen))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
