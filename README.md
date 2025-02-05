@@ -2,6 +2,10 @@
 
 A modern fork of the original utility library.
 
+> [!TIP]
+> If you're starting a brand new project, you probably don't need (or want) this library. You can use regular JS functions in gjs and gts files.
+
+
 template tag `gts/gjs` example:
 
 ```gjs
