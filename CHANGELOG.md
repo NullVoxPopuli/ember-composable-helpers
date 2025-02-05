@@ -1,5 +1,20 @@
 ### Changelog
 
+## Release (2025-02-05)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.8 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#40](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/40) Make "pick" helper types less restrictive ([@dknutsen](https://github.com/dknutsen))
+
+#### :memo: Documentation
+* [#42](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/42) Update README.md to have a note about not needing this library in brand new projects ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- Dan Knutsen ([@dknutsen](https://github.com/dknutsen))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-01-08)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.7 (patch)
