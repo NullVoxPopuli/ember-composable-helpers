@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2025-02-24)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.9 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#44](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/44) fix: `queue` signature ([@aklkv](https://github.com/aklkv))
+
+#### Committers: 1
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+
 ## Release (2025-02-05)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.8 (patch)
