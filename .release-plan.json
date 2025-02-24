@@ -2,8 +2,8 @@
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
       "impact": "patch",
-      "oldVersion": "5.2.7",
-      "newVersion": "5.2.8",
+      "oldVersion": "5.2.8",
+      "newVersion": "5.2.9",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-02-05)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.8 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#40](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/40) Make \"pick\" helper types less restrictive ([@dknutsen](https://github.com/dknutsen))\n\n#### :memo: Documentation\n* [#42](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/42) Update README.md to have a note about not needing this library in brand new projects ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- Dan Knutsen ([@dknutsen](https://github.com/dknutsen))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-02-24)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.9 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#44](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/44) fix: `queue` signature ([@aklkv](https://github.com/aklkv))\n\n#### Committers: 1\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n"
 }
