@@ -5,7 +5,10 @@ function invokeMaybeNullable(curr: (...args1: unknown[]) => void | null, args: u
   return curr == null ? undefined : curr(...args);
 }
 
-export function queue(actions: (() => void)[] = []) {
+
+export function queue(positional: unknown[] = []) {
+  const actions = positional as (() => void)[];
+
   return function(...args: unknown[]) {
     let invokeWithArgs = function(acc: unknown, curr: () => void) {
       if (isPromise(acc)) {
@@ -25,4 +28,4 @@ export function queue(actions: (() => void)[] = []) {
   };
 }
 
-export default helper(queue as (actions: unknown[]) => unknown);
+export default helper(queue);
