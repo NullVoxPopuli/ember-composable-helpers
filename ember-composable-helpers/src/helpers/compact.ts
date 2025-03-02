@@ -9,7 +9,7 @@ export function compact<T>([value]: [T[]]): T[] {
     array = [value];
   }
 
-  return array.filter(item => isPresent(item));
+  return array.filter((item) => isPresent(item));
 }
 
 export default helper(compact);

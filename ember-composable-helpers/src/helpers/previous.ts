@@ -1,7 +1,7 @@
-import { helper } from "@ember/component/helper";
-import getIndex from "../utils/get-index.ts";
-import { isEmpty } from "@ember/utils";
-import getValueArrayAndUseDeepEqualFromParams from "../-private/get-value-array-and-use-deep-equal-from-params.ts";
+import { helper } from '@ember/component/helper';
+import getIndex from '../utils/get-index.ts';
+import { isEmpty } from '@ember/utils';
+import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params.ts';
 
 export function previous<T>(currentValue: T, array: T[], useDeepEqual = false) {
   let currentIndex = getIndex(array, currentValue, useDeepEqual);

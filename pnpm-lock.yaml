@@ -84,6 +84,12 @@ importers:
       eslint-plugin-node:
         specifier: ^10.0.0
         version: 10.0.0(eslint@9.17.0)
+      prettier:
+        specifier: ^3.5.2
+        version: 3.5.2
+      prettier-plugin-ember-template-tag:
+        specifier: ^2.0.4
+        version: 2.0.4(prettier@3.5.2)
       rollup:
         specifier: ^3.29.1
         version: 3.29.4
@@ -7559,9 +7565,20 @@ packages:
     resolution: {integrity: sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==}
     engines: {node: '>=4'}
 
+  prettier-plugin-ember-template-tag@2.0.4:
+    resolution: {integrity: sha512-Ude3MJyPBMr/Er5aSS9Y0dsnHWX3prpJB+Jj/BKKUT/EvG2ftnIMBsZXmRu68RJA62JJB8MdKBloYmCu2pTRNg==}
+    engines: {node: 18.* || >= 20}
+    peerDependencies:
+      prettier: '>= 3.0.0'
+
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.5.2:
+    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
+    engines: {node: '>=14'}
     hasBin: true
 
   printf@0.6.1:
@@ -20089,7 +20106,17 @@ snapshots:
 
   prepend-http@2.0.0: {}
 
+  prettier-plugin-ember-template-tag@2.0.4(prettier@3.5.2):
+    dependencies:
+      '@babel/core': 7.26.0
+      content-tag: 2.0.3
+      prettier: 3.5.2
+    transitivePeerDependencies:
+      - supports-color
+
   prettier@2.8.8: {}
+
+  prettier@3.5.2: {}
 
   printf@0.6.1: {}
 

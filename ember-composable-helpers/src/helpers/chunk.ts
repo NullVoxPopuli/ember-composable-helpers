@@ -12,7 +12,7 @@ export function chunk<T>(num: number | string, array: T[]) {
     length = array.length;
   }
 
-  array = asArray(array)
+  array = asArray(array);
 
   if (!length || size < 1) {
     return [];
@@ -29,6 +29,6 @@ export function chunk<T>(num: number | string, array: T[]) {
   }
 }
 
-export default helper(function<T>([num, array]: [number | string, T[]]) {
+export default helper(function <T>([num, array]: [number | string, T[]]) {
   return chunk(num, array);
 });

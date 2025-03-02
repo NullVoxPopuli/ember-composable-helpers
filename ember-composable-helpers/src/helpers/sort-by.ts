@@ -5,7 +5,7 @@ import EmberArray from '@ember/array';
 import asArray from '../utils/as-array.ts';
 
 const collator = new Intl.Collator(undefined, {
-  sensitivity: 'base'
+  sensitivity: 'base',
 });
 
 function normalizeToBoolean(val: boolean | number | void): boolean {
@@ -63,7 +63,7 @@ function sortDesc<T>(key: string, a: T, b: T) {
   }
 
   if (aValue < bValue) {
-    return 1
+    return 1;
   } else if (aValue > bValue) {
     return -1;
   }
@@ -103,7 +103,7 @@ function sortAsc<T>(key: string, a: T, b: T) {
   }
 
   if (aValue < bValue) {
-    return -1
+    return -1;
   } else if (aValue > bValue) {
     return 1;
   }
@@ -116,15 +116,15 @@ class SortBy<T> {
 
   constructor(...args: [T[] | EmberArray<T>]) {
     let [array] = args;
-    if (typeof (array as EmberArray<T>).toArray === "function") {
+    if (typeof (array as EmberArray<T>).toArray === 'function') {
       array = (array as EmberArray<T>).toArray();
     }
 
-    this.array = [...array as T[]];
+    this.array = [...(array as T[])];
   }
 
   comparator(key: string | ((a: T, b: T) => number)) {
-    return (typeof key === 'function') ? key : this.defaultSort(key);
+    return typeof key === 'function' ? key : this.defaultSort(key);
   }
 
   defaultSort(sortKey: string) {
@@ -149,10 +149,10 @@ class BubbleSort<T> extends SortBy<T> {
   perform(keys: string[] = []) {
     let swapped = false;
 
-    let compFuncs = keys.map(key => this.comparator(key));
+    let compFuncs = keys.map((key) => this.comparator(key));
     let compFunc = (a: T, b: T) => {
       for (let i = 0; i < compFuncs.length; i += 1) {
-        let result = compFuncs[i]?.(a,b);
+        let result = compFuncs[i]?.(a, b);
         if (result === 0) {
           continue;
         }
@@ -162,9 +162,14 @@ class BubbleSort<T> extends SortBy<T> {
     };
     for (let i = 1; i < this.array.length; i += 1) {
       for (let j = 0; j < this.array.length - i; j += 1) {
-        let shouldSwap = normalizeToBoolean(compFunc(this.array[j+1]!, this.array[j]!));
+        let shouldSwap = normalizeToBoolean(
+          compFunc(this.array[j + 1]!, this.array[j]!),
+        );
         if (shouldSwap) {
-          [this.array[j], this.array[j+1]] = [this.array[j+1]!, this.array[j]!];
+          [this.array[j], this.array[j + 1]] = [
+            this.array[j + 1]!,
+            this.array[j]!,
+          ];
 
           swapped = true;
         }
@@ -178,13 +183,15 @@ class BubbleSort<T> extends SortBy<T> {
   }
 }
 
-export function sortBy<T, K extends string | `${string}:desc`>(params: [...K[], T[]]) {
+export function sortBy<T, K extends string | `${string}:desc`>(
+  params: [...K[], T[]],
+) {
   // slice params to avoid mutating the provided params
   let sortParams = params.slice();
   let array = asArray(sortParams.pop() as T[]);
   let sortKeys = sortParams as K[];
 
-  if (!array || (!sortKeys || sortKeys.length === 0)) {
+  if (!array || !sortKeys || sortKeys.length === 0) {
     return [];
   }
 

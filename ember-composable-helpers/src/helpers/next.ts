@@ -4,7 +4,11 @@ import { isEmpty } from '@ember/utils';
 import getValueArrayAndUseDeepEqualFromParams from '../-private/get-value-array-and-use-deep-equal-from-params.ts';
 import asArray from '../utils/as-array.ts';
 
-export function next<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) {
+export function next<T>(
+  currentValue: T,
+  maybeArray: T[],
+  useDeepEqual = false,
+) {
   const array = asArray(maybeArray);
   const currentIndex = getIndex(array, currentValue, useDeepEqual);
   const lastIndex = array.length - 1;
@@ -17,7 +21,8 @@ export function next<T>(currentValue: T, maybeArray: T[], useDeepEqual = false) 
 }
 
 export default helper(function <T>(params: [T, boolean | T[], T[]?]) {
-  let { currentValue, array, useDeepEqual } = getValueArrayAndUseDeepEqualFromParams(params);
+  let { currentValue, array, useDeepEqual } =
+    getValueArrayAndUseDeepEqualFromParams(params);
 
   return next(currentValue, array as T[], useDeepEqual);
 });
