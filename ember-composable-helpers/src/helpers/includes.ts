@@ -7,14 +7,16 @@ export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
     return false;
   }
 
-  let needles = isEmberArray(needleOrNeedles) ? needleOrNeedles : [needleOrNeedles];
-  let haystackAsEmberArray = asArray(haystack);
+  const needles = isEmberArray(needleOrNeedles)
+    ? needleOrNeedles
+    : [needleOrNeedles];
+  const haystackAsEmberArray = asArray(haystack);
 
   return asArray(needles as T[]).every((needle) => {
     return haystackAsEmberArray.includes(needle);
   });
 }
 
-export default helper(function<T>([needle, haystack]: [T | T[], T[]]) {
+export default helper(function <T>([needle, haystack]: [T | T[], T[]]) {
   return includes(needle, haystack);
 });

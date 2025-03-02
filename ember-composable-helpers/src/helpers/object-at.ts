@@ -11,6 +11,8 @@ export function objectAt<T>(index: number | string, array: T[]) {
   return A(array).objectAt(index);
 }
 
-export default helper(function<T>([index, array]: [number, T[]]): T | undefined {
+export default helper(function <T>([index, array]: [number, T[]]):
+  | T
+  | undefined {
   return objectAt(index, array);
 });

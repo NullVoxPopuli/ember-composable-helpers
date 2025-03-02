@@ -9,7 +9,7 @@ export function shuffle<T>(array: T[], randomizer?: () => number) {
   randomizer = (typeOf(randomizer) === 'function' && randomizer) || Math.random;
 
   while (count > 1) {
-    rand = Math.floor(randomizer() * (count--));
+    rand = Math.floor(randomizer() * count--);
 
     temp = array[count];
     array[count] = array[rand]!;
@@ -18,7 +18,10 @@ export function shuffle<T>(array: T[], randomizer?: () => number) {
   return array;
 }
 
-export default helper(function<T>([randomizer, array]: [(() => number) | T[] | undefined, T[]?]) {
+export default helper(function <T>([randomizer, array]: [
+  (() => number) | T[] | undefined,
+  T[]?,
+]) {
   if (array === undefined) {
     array = randomizer as T[];
     randomizer = undefined;
@@ -28,5 +31,5 @@ export default helper(function<T>([randomizer, array]: [(() => number) | T[] | u
     return [array];
   }
 
-  return shuffle(array, randomizer as () => number)
+  return shuffle(array, randomizer as () => number);
 });

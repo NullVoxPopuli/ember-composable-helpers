@@ -3,10 +3,10 @@ import { get } from '@ember/object';
 import asArray from '../utils/as-array.ts';
 
 export function groupBy<T>([byPath, array]: [string, T[]]) {
-  let groups: { [key: string]: T[] } = {};
+  const groups: { [key: string]: T[] } = {};
 
   asArray(array).forEach((item) => {
-    let groupName = get(item, byPath) as string;
+    const groupName = get(item, byPath) as string;
     let group = groups[groupName];
 
     if (!Array.isArray(group)) {

@@ -1,5 +1,7 @@
-export default function getValueArrayAndUseDeepEqualFromParams<T>(params: [T, boolean | T[], T[]?]) {
-  let currentValue = params[0];
+export default function getValueArrayAndUseDeepEqualFromParams<T>(
+  params: [T, boolean | T[], T[]?],
+) {
+  const currentValue = params[0];
 
   let array;
   let useDeepEqual = false;
@@ -13,6 +15,6 @@ export default function getValueArrayAndUseDeepEqualFromParams<T>(params: [T, bo
   return {
     currentValue,
     array,
-    useDeepEqual
-  }
+    useDeepEqual,
+  };
 }

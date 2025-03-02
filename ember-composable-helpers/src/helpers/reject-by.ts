@@ -5,7 +5,11 @@ import { get } from '@ember/object';
 import isEqual from '../utils/is-equal.ts';
 import asArray from '../utils/as-array.ts';
 
-export function rejectBy<T>([byPath, value, array]: [string, T | T[] | undefined, T[]]) {
+export function rejectBy<T>([byPath, value, array]: [
+  string,
+  T | T[] | undefined,
+  T[],
+]) {
   if (!isEmberArray(array) && isEmberArray(value)) {
     array = value as T[];
     value = undefined;
