@@ -2,6 +2,51 @@
   "name": "@nullvoxpopuli/ember-composable-helpers",
   "version": "5.2.9",
   "description": "Composable helpers for Ember",
+  "keywords": [
+    "ember-addon",
+    "helpers",
+    "compose",
+    "group-by",
+    "map-by",
+    "filter-by",
+    "sort-by",
+    "take",
+    "drop",
+    "compute"
+  ],
+  "repository": "https://github.com/NullVoxPopuli/ember-composable-helpers",
+  "license": "MIT",
+  "author": "The Ember Community",
+  "contributors": [
+    "Lauren Tan <arr@sugarpirate.com>",
+    "Marten Schilstra <mail@martenschilstra.nl>"
+  ],
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs",
+    "./addon-main.cjs": "./addon-main.cjs",
+    "./addon-main": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
+  },
+  "files": [
+    "addon-main.cjs",
+    "dist",
+    "declarations",
+    "src"
+  ],
   "scripts": {
     "build": "concurrently 'pnpm:build:*'",
     "build:js": "rollup --config",
@@ -22,10 +67,10 @@
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
     "test:all": "ember try:each"
   },
-  "contributors": [
-    "Lauren Tan <arr@sugarpirate.com>",
-    "Marten Schilstra <mail@martenschilstra.nl>"
-  ],
+  "dependencies": {
+    "@embroider/addon-shim": "^1.9.0",
+    "ember-functions-as-helper-polyfill": "^2.1.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/plugin-proposal-decorators": "^7.25.9",
@@ -53,51 +98,6 @@
     "typescript": "^5.3.3",
     "webpack": "^5.88.1"
   },
-  "keywords": [
-    "ember-addon",
-    "helpers",
-    "compose",
-    "group-by",
-    "map-by",
-    "filter-by",
-    "sort-by",
-    "take",
-    "drop",
-    "compute"
-  ],
-  "repository": "https://github.com/NullVoxPopuli/ember-composable-helpers",
-  "license": "MIT",
-  "author": "The Ember Community",
-  "dependencies": {
-    "@embroider/addon-shim": "^1.9.0",
-    "ember-functions-as-helper-polyfill": "^2.1.2"
-  },
-  "exports": {
-    ".": {
-      "types": "./declarations/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./*": {
-      "types": "./declarations/*.d.ts",
-      "default": "./dist/*.js"
-    },
-    "./addon-main.js": "./addon-main.cjs",
-    "./addon-main.cjs": "./addon-main.cjs",
-    "./addon-main": "./addon-main.cjs"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "declarations/*"
-      ]
-    }
-  },
-  "files": [
-    "addon-main.cjs",
-    "dist",
-    "declarations",
-    "src"
-  ],
   "ember-addon": {
     "main": "addon-main.cjs",
     "type": "addon",
