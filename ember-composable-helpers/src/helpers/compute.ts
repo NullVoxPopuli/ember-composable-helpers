@@ -6,7 +6,10 @@ import type { AnyFn } from '../utils/types';
  *
  * Calls a function
  */
-export function compute<Action extends AnyFn>([action, ...params]: [action: Action, ...params: Parameters<Action>]): ReturnType<Action> {
+export function compute<Action extends AnyFn>([action, ...params]: [
+  action: Action,
+  ...params: Parameters<Action>,
+]): ReturnType<Action> {
   return action(...params);
 }
 

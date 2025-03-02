@@ -12,6 +12,6 @@ export function flatten<T>(array: T[]): T[] {
   }, []);
 }
 
-export default helper(function<T>([array]: [T[]]) {
+export default helper(function <T>([array]: [T[]]) {
   return flatten(array);
 });

@@ -8,7 +8,7 @@ export function mapBy<T extends object>([byPath, array]: [keyof T, T[]]) {
     return [];
   }
 
-  return asArray(array).map(item => get(item, byPath));
+  return asArray(array).map((item) => get(item, byPath));
 }
 
 export default helper(mapBy);
