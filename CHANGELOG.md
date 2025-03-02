@@ -1,5 +1,16 @@
 ### Changelog
 
+## Release (2025-03-02)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.10 (patch)
+
+#### :house: Internal
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#47](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/47) fix(addon): add prettier setup ([@aklkv](https://github.com/aklkv))
+
+#### Committers: 1
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+
 ## Release (2025-02-24)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.9 (patch)
