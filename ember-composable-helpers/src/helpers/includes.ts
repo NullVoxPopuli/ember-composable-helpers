@@ -7,7 +7,9 @@ export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
     return false;
   }
 
-  let needles = isEmberArray(needleOrNeedles) ? needleOrNeedles : [needleOrNeedles];
+  let needles = isEmberArray(needleOrNeedles)
+    ? needleOrNeedles
+    : [needleOrNeedles];
   let haystackAsEmberArray = asArray(haystack);
 
   return asArray(needles as T[]).every((needle) => {
@@ -15,6 +17,6 @@ export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
   });
 }
 
-export default helper(function<T>([needle, haystack]: [T | T[], T[]]) {
+export default helper(function <T>([needle, haystack]: [T | T[], T[]]) {
   return includes(needle, haystack);
 });

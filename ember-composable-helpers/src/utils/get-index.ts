@@ -1,9 +1,9 @@
-import isEqual from "../utils/is-equal.ts";
+import isEqual from '../utils/is-equal.ts';
 
 export default function getIndex<T>(
   array: T[],
   currentValue: T,
-  useDeepEqual: boolean
+  useDeepEqual: boolean,
 ) {
   let needle = currentValue;
 

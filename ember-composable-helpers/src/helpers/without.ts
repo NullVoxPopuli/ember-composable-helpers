@@ -19,6 +19,6 @@ export function without<T>(needle: T, haystack: T[]) {
   return emberArray(haystack).without(needle);
 }
 
-export default helper(function<T>([needle, haystack]: [T | T[], T[]]) {
+export default helper(function <T>([needle, haystack]: [T | T[], T[]]) {
   return without(needle, haystack);
 });

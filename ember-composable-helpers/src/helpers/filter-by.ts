@@ -10,7 +10,6 @@ export function filterBy<T extends object, K extends keyof T>([
   value,
   array,
 ]: [K, T[K] | T[] | undefined, T[]]) {
-
   let isPresent = true;
   if (!isEmberArray(array) && isEmberArray(value)) {
     array = value as T[];

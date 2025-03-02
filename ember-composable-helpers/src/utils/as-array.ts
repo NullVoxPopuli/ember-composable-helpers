@@ -16,7 +16,10 @@ function isPromiseLike<T>(thing: unknown) {
 }
 
 function isPromiseProxyLike<T>(thing: unknown): thing is ArrayProxy<T> {
-  return isPromiseLike(thing as Promise<T>) && Object.hasOwnProperty.call(thing, 'content');
+  return (
+    isPromiseLike(thing as Promise<T>) &&
+    Object.hasOwnProperty.call(thing, 'content')
+  );
 }
 
 function toExtendable<T>(array: T[]) {
@@ -33,7 +36,9 @@ export default function asArray<T>(maybeArray: T[]): T[] {
 
 function _asArray<T>(maybeArray: unknown): T[] {
   if (typeof maybeArray === 'number') {
-    throw new Error('Numbers not supported as arrays [ember-composable-helpers]');
+    throw new Error(
+      'Numbers not supported as arrays [ember-composable-helpers]',
+    );
   }
   if (typeof maybeArray === 'string') {
     return maybeArray.split('') as T[];
@@ -52,15 +57,22 @@ function _asArray<T>(maybeArray: unknown): T[] {
   } else if (maybeArray instanceof Map) {
     return Array.from(maybeArray.values());
   } else if (maybeArray instanceof WeakMap) {
-    throw new Error('WeakMaps is not supported as arrays [ember-composable-helpers]');
+    throw new Error(
+      'WeakMaps is not supported as arrays [ember-composable-helpers]',
+    );
   } else if (maybeArray instanceof WeakSet) {
-    throw new Error('WeakSets is not supported as arrays [ember-composable-helpers]');
-  } if (typeof maybeArray === 'object') {
+    throw new Error(
+      'WeakSets is not supported as arrays [ember-composable-helpers]',
+    );
+  }
+  if (typeof maybeArray === 'object') {
     if (isPromiseProxyLike(maybeArray)) {
       // eslint-disable-next-line ember/no-get -- TODO: Revisit this
       const content = get(maybeArray, 'content');
       if (typeof content !== 'object' || content === null) {
-        throw new Error('Unknown content type in array-like object [ember-composable-helpers]');
+        throw new Error(
+          'Unknown content type in array-like object [ember-composable-helpers]',
+        );
       }
       if (isArrayable(content)) {
         return (content as EmberArray<T>).toArray();
@@ -69,13 +81,17 @@ function _asArray<T>(maybeArray: unknown): T[] {
       }
     }
     if (isPromiseLike(maybeArray)) {
-      throw new Error('Promise-like objects is not supported as arrays [ember-composable-helpers]');
+      throw new Error(
+        'Promise-like objects is not supported as arrays [ember-composable-helpers]',
+      );
     }
     if (isArrayable(maybeArray)) {
       return (maybeArray as EmberArray<T>).toArray();
     }
     if (maybeArray instanceof EmberObject) {
-      throw new Error('EmberObjects is not supported as arrays [ember-composable-helpers]')
+      throw new Error(
+        'EmberObjects is not supported as arrays [ember-composable-helpers]',
+      );
     }
     return Array.from(Object.values(maybeArray));
   }
@@ -83,7 +99,9 @@ function _asArray<T>(maybeArray: unknown): T[] {
     return [];
   }
   if (!isIterable(maybeArray)) {
-    throw new Error('Argument, passed as array is not iterable [ember-composable-helpers]');
+    throw new Error(
+      'Argument, passed as array is not iterable [ember-composable-helpers]',
+    );
   }
   return maybeArray as T[];
 }

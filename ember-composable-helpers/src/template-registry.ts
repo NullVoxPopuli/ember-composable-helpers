@@ -67,7 +67,7 @@ export default interface Registry {
   'group-by': typeof GroupByHelper;
   'has-next': typeof HasNextHelper;
   'has-previous': typeof HasPreviousHelper;
-  'inc': typeof IncHelper;
+  inc: typeof IncHelper;
   includes: typeof IncludesHelper;
   intersect: typeof IntersectHelper;
   invoke: typeof InvokeHelper;
