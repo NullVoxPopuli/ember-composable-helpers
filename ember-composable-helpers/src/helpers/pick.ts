@@ -7,7 +7,7 @@ export function pick<T extends Event | Record<string, unknown>>([
   action,
 ]: [string, AnyVoidFn]) {
   return function (obj: T) {
-    let value = get(obj, path);
+    const value = get(obj, path);
 
     if (!action) {
       return value;

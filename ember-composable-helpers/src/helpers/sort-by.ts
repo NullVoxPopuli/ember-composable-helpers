@@ -149,10 +149,10 @@ class BubbleSort<T> extends SortBy<T> {
   perform(keys: string[] = []) {
     let swapped = false;
 
-    let compFuncs = keys.map((key) => this.comparator(key));
-    let compFunc = (a: T, b: T) => {
+    const compFuncs = keys.map((key) => this.comparator(key));
+    const compFunc = (a: T, b: T) => {
       for (let i = 0; i < compFuncs.length; i += 1) {
-        let result = compFuncs[i]?.(a, b);
+        const result = compFuncs[i]?.(a, b);
         if (result === 0) {
           continue;
         }
@@ -162,7 +162,7 @@ class BubbleSort<T> extends SortBy<T> {
     };
     for (let i = 1; i < this.array.length; i += 1) {
       for (let j = 0; j < this.array.length - i; j += 1) {
-        let shouldSwap = normalizeToBoolean(
+        const shouldSwap = normalizeToBoolean(
           compFunc(this.array[j + 1]!, this.array[j]!),
         );
         if (shouldSwap) {
@@ -183,12 +183,13 @@ class BubbleSort<T> extends SortBy<T> {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 export function sortBy<T, K extends string | `${string}:desc`>(
   params: [...K[], T[]],
 ) {
   // slice params to avoid mutating the provided params
-  let sortParams = params.slice();
-  let array = asArray(sortParams.pop() as T[]);
+  const sortParams = params.slice();
+  const array = asArray(sortParams.pop() as T[]);
   let sortKeys = sortParams as K[];
 
   if (!array || !sortKeys || sortKeys.length === 0) {

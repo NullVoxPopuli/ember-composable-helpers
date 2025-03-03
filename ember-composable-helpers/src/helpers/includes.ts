@@ -7,10 +7,10 @@ export function includes<T>(needleOrNeedles: T | T[], haystack: T[]) {
     return false;
   }
 
-  let needles = isEmberArray(needleOrNeedles)
+  const needles = isEmberArray(needleOrNeedles)
     ? needleOrNeedles
     : [needleOrNeedles];
-  let haystackAsEmberArray = asArray(haystack);
+  const haystackAsEmberArray = asArray(haystack);
 
   return asArray(needles as T[]).every((needle) => {
     return haystackAsEmberArray.includes(needle);

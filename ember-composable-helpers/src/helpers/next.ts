@@ -21,7 +21,7 @@ export function next<T>(
 }
 
 export default helper(function <T>(params: [T, boolean | T[], T[]?]) {
-  let { currentValue, array, useDeepEqual } =
+  const { currentValue, array, useDeepEqual } =
     getValueArrayAndUseDeepEqualFromParams(params);
 
   return next(currentValue, array as T[], useDeepEqual);

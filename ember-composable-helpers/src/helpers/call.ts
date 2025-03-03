@@ -42,10 +42,7 @@ export default function callHelper<Fn extends (this: never) => unknown>(
   fn: Fn,
 ): ReturnType<Fn>;
 export default function callHelper(fn?: undefined, thisArg?: unknown): void;
-export default function callHelper(
-  fn?: () => unknown | undefined,
-  thisArg?: unknown,
-) {
+export default function callHelper(fn?: () => unknown, thisArg?: unknown) {
   // @ts-expect-error -- This is fine, but TS doesn't like it with the overrides
   return call([fn, thisArg]);
 }
