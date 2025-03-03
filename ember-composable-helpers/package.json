@@ -30,9 +30,7 @@
       "types": "./declarations/*.d.ts",
       "default": "./dist/*.js"
     },
-    "./addon-main.js": "./addon-main.cjs",
-    "./addon-main.cjs": "./addon-main.cjs",
-    "./addon-main": "./addon-main.cjs"
+    "./addon-main.js": "./addon-main.cjs"
   },
   "typesVersions": {
     "*": {
@@ -43,32 +41,28 @@
   },
   "files": [
     "addon-main.cjs",
-    "dist",
     "declarations",
-    "src"
+    "dist"
   ],
   "scripts": {
-    "build": "concurrently 'pnpm:build:*'",
-    "build:js": "rollup --config",
-    "build:types": "glint --declaration",
+    "build": "rollup --config",
     "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm run format",
     "lint:format": "prettier . --cache --check",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
-    "node-test": "mocha test --recursive --reporter spec",
-    "prepack": "concurrently 'pnpm:build:*'",
-    "start": "concurrently 'pnpm:start:*'",
-    "start:js": "rollup --config --watch --no-watch.clearScreen",
-    "start:types": "glint --declaration --watch",
-    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
-    "test:all": "ember try:each"
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.9.0",
+    "decorator-transforms": "^2.3.0",
     "ember-functions-as-helper-polyfill": "^2.1.2"
   },
   "devDependencies": {
@@ -88,7 +82,7 @@
     "babel-plugin-ember-template-compilation": "^2.3.0",
     "concurrently": "^9.1.2",
     "ember-source": "~5.8.0",
-    "ember-template-lint": "^6.0.0",
+    "ember-template-lint": "^6.1.0",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-ember": "^12.5.0",
@@ -97,9 +91,9 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.2",
     "prettier-plugin-ember-template-tag": "^2.0.4",
-    "rollup": "^3.29.1",
+    "rollup": "^4.34.9",
     "rollup-plugin-copy": "^3.5.0",
-    "typescript": "^5.3.3",
+    "typescript": "~5.8.2",
     "typescript-eslint": "^8.25.0",
     "webpack": "^5.88.1"
   },
@@ -107,9 +101,9 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "main": "addon-main.cjs",
-    "type": "addon",
     "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
     "app-js": {
       "./helpers/append.js": "./dist/_app_/helpers/append.js",
       "./helpers/call.js": "./dist/_app_/helpers/call.js",
