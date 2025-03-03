@@ -4,6 +4,7 @@
 # compiled output
 /declarations/
 /dist/
+/declarations/
 
 # misc
 /coverage/

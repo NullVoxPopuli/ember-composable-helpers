@@ -12,7 +12,7 @@ export function queue(positional: unknown[] = []) {
   const actions = positional as (() => void)[];
 
   return function (...args: unknown[]) {
-    let invokeWithArgs = function (acc: unknown, curr: () => void) {
+    const invokeWithArgs = function (acc: unknown, curr: () => void) {
       if (isPromise(acc)) {
         return acc.then(() => invokeMaybeNullable(curr, args));
       }
@@ -20,6 +20,7 @@ export function queue(positional: unknown[] = []) {
       return invokeMaybeNullable(curr, args);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     return actions.reduce<unknown | Promise<unknown>>((acc, curr, idx) => {
       if (idx === 0) {
         return invokeMaybeNullable(curr, args);

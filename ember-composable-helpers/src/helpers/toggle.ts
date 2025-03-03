@@ -17,11 +17,11 @@ export function toggle<T>([prop, obj, ...values]: [
   ...T[keyof T][],
 ]) {
   return function () {
-    let currentValue = get(obj as object, prop as string);
+    const currentValue = get(obj as object, prop as string);
 
     if (isPresent(values)) {
-      let currentIdx = values.indexOf(currentValue as T[keyof T]);
-      let nextIdx = nextIndex(values.length, currentIdx);
+      const currentIdx = values.indexOf(currentValue as T[keyof T]);
+      const nextIdx = nextIndex(values.length, currentIdx);
 
       return set(obj as object, prop as string, values[nextIdx]!);
     }

@@ -10,15 +10,15 @@ export function hasNext<T>(
   maybeArray: T[],
   useDeepEqual = false,
 ) {
-  let array = asArray(maybeArray);
-  let nextValue = next(currentValue, array, useDeepEqual);
-  let isNotSameValue = !isEqual(nextValue, currentValue, useDeepEqual);
+  const array = asArray(maybeArray);
+  const nextValue = next(currentValue, array, useDeepEqual);
+  const isNotSameValue = !isEqual(nextValue, currentValue, useDeepEqual);
 
   return isNotSameValue && isPresent(nextValue);
 }
 
 export default helper(function <T>(params: [T, boolean | T[], T[]?]) {
-  let { currentValue, array, useDeepEqual } =
+  const { currentValue, array, useDeepEqual } =
     getValueArrayAndUseDeepEqualFromParams(params);
 
   return hasNext(currentValue, array as T[], useDeepEqual);

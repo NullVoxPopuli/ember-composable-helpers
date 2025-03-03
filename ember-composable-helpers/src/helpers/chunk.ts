@@ -4,8 +4,8 @@ const { max, ceil } = Math;
 import asArray from '../utils/as-array.ts';
 
 export function chunk<T>(num: number | string, array: T[]) {
-  let integer = parseInt(num as string, 10);
-  let size = max(integer, 0);
+  const integer = parseInt(num as string, 10);
+  const size = max(integer, 0);
 
   let length = 0;
   if (isEmberArray(array)) {
@@ -19,7 +19,7 @@ export function chunk<T>(num: number | string, array: T[]) {
   } else {
     let index = 0;
     let resultIndex = -1;
-    let result = new Array(ceil(length / size));
+    const result = new Array(ceil(length / size));
 
     while (index < length) {
       result[++resultIndex] = array.slice(index, (index += size));
