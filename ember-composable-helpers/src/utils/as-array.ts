@@ -1,6 +1,7 @@
 import EmberArray, { isArray } from '@ember/array';
-import ArrayProxy from '@ember/array/proxy';
 import EmberObject, { get } from '@ember/object';
+
+import type ArrayProxy from '@ember/array/proxy';
 
 function isIterable(value: unknown) {
   return Symbol.iterator in Object(value);

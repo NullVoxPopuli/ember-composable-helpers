@@ -1,6 +1,7 @@
 import { helper } from '@ember/component/helper';
 import { isPresent } from '@ember/utils';
 import { isArray } from '@ember/array';
+
 export function compact<T>([value]: [T[]]): T[] {
   let array;
   if (Array.isArray(value) || isArray(value)) {
