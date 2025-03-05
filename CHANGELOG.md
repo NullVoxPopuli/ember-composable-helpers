@@ -1,5 +1,23 @@
 ### Changelog
 
+## Release (2025-03-05)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.10 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`, `test-app`
+  * [#50](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/50) fix: make `byPath` type generic for various array helpers, update `reject-by` signature ([@charlesfries](https://github.com/charlesfries))
+
+#### :house: Internal
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#46](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/46) feat(addon): update blueprint ([@aklkv](https://github.com/aklkv))
+  * [#49](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/49) fix(addon): setup eslint ([@aklkv](https://github.com/aklkv))
+  * [#47](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/47) fix(addon): add prettier setup ([@aklkv](https://github.com/aklkv))
+
+#### Committers: 2
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+
 ## Release (2025-02-24)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.9 (patch)

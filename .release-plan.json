@@ -2,16 +2,20 @@
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
       "impact": "patch",
-      "oldVersion": "5.2.8",
-      "newVersion": "5.2.9",
+      "oldVersion": "5.2.9",
+      "newVersion": "5.2.10",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-02-24)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.9 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#44](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/44) fix: `queue` signature ([@aklkv](https://github.com/aklkv))\n\n#### Committers: 1\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n"
+  "description": "## Release (2025-03-05)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.10 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#50](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/50) fix: make `byPath` type generic for various array helpers, update `reject-by` signature ([@charlesfries](https://github.com/charlesfries))\n\n#### :house: Internal\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#46](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/46) feat(addon): update blueprint ([@aklkv](https://github.com/aklkv))\n  * [#49](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/49) fix(addon): setup eslint ([@aklkv](https://github.com/aklkv))\n  * [#47](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/47) fix(addon): add prettier setup ([@aklkv](https://github.com/aklkv))\n\n#### Committers: 2\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n"
 }
