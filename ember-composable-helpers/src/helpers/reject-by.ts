@@ -5,9 +5,9 @@ import { get } from '@ember/object';
 import isEqual from '../utils/is-equal.ts';
 import asArray from '../utils/as-array.ts';
 
-export function rejectBy<T>([byPath, value, array]: [
-  string,
-  T | T[] | undefined,
+export function rejectBy<T extends object, K extends keyof T>([byPath, value, array]: [
+  K,
+  T | T[] | ((value: T[K]) => boolean) | undefined,
   T[],
 ]) {
   if (!isEmberArray(array) && isEmberArray(value)) {
