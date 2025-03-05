@@ -5,16 +5,16 @@ import { get } from '@ember/object';
 import isEqual from '../utils/is-equal.ts';
 import asArray from '../utils/as-array.ts';
 
-export function rejectBy<T extends object, K extends keyof T>([byPath, value, array]: [
-  K,
-  T | T[] | ((value: T[K]) => boolean) | undefined,
-  T[],
-]) {
+export function rejectBy<T extends object, K extends keyof T>([
+  byPath,
+  value,
+  array,
+]: [K, T | ((value: T[K]) => boolean) | undefined, T[]] | [K, T[]]) {
   if (!isEmberArray(array) && isEmberArray(value)) {
     array = value as T[];
     value = undefined;
   }
-  array = asArray(array);
+  array = asArray(array as T[]);
 
   let filterFn;
 
