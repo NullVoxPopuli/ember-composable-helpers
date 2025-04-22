@@ -9,7 +9,6 @@ on:
 jobs:
   cache-dependencies:
     name: Cache dependencies
-    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
       - uses: wyvox/action-setup-pnpm@v3
