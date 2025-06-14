@@ -27,7 +27,7 @@ export { default as noop } from './helpers/noop.ts';
 export { default as objectAt } from './helpers/object-at.ts';
 export { default as optional } from './helpers/optional.ts';
 export { default as pick } from './helpers/pick.ts';
-// this is deliberate due to how embroider/vite evaluates everything, this helper uses API that no longer exists in Ember 6.x
+// this is deliberate due to how embroider/vite evaluates everything in a module upon import, the underlying APIs used by this helper longer exist in Ember 6.x
 // export { default as pipeAction } from './helpers/pipe-action.ts';
 export { default as pipe } from './helpers/pipe.ts';
 export { default as previous } from './helpers/previous.ts';
