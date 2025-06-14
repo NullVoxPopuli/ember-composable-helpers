@@ -41,7 +41,7 @@ export { default as shuffle } from './helpers/shuffle.ts';
 export { default as slice } from './helpers/slice.ts';
 export { default as sortBy } from './helpers/sort-by.ts';
 export { default as take } from './helpers/take.ts';
-// this is deliberate due to how embroider/vite evaluates everything, this helper uses API that no longer exists in Ember 6.x
+// this is deliberate due to how embroider/vite evaluates everything in a module upon import, the underlying APIs used by this helper longer exist in Ember 6.x
 // export { default as toggleAction } from './helpers/toggle-action.ts';
 export { default as toggle } from './helpers/toggle.ts';
 export { default as union } from './helpers/union.ts';
