@@ -1,3 +1,8 @@
+/**
+ * Note that this file *at all* is deprecated in ember-source v6,
+ * and will not work in v7 as this import is being removed in v7.
+ * Do not use closure-action with ember-composable-helpers.
+ */
 import Ember from 'ember';
 
 const { __loader } = Ember;
