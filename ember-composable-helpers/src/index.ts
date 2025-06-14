@@ -27,7 +27,8 @@ export { default as noop } from './helpers/noop.ts';
 export { default as objectAt } from './helpers/object-at.ts';
 export { default as optional } from './helpers/optional.ts';
 export { default as pick } from './helpers/pick.ts';
-export { default as pipeAction } from './helpers/pipe-action.ts';
+// this is deliberate due to how embroider/vite evaluates everything in a module upon import, the underlying APIs used by this helper longer exist in Ember 6.x
+// export { default as pipeAction } from './helpers/pipe-action.ts';
 export { default as pipe } from './helpers/pipe.ts';
 export { default as previous } from './helpers/previous.ts';
 export { default as queue } from './helpers/queue.ts';
@@ -40,7 +41,8 @@ export { default as shuffle } from './helpers/shuffle.ts';
 export { default as slice } from './helpers/slice.ts';
 export { default as sortBy } from './helpers/sort-by.ts';
 export { default as take } from './helpers/take.ts';
-export { default as toggleAction } from './helpers/toggle-action.ts';
+// this is deliberate due to how embroider/vite evaluates everything in a module upon import, the underlying APIs used by this helper longer exist in Ember 6.x
+// export { default as toggleAction } from './helpers/toggle-action.ts';
 export { default as toggle } from './helpers/toggle.ts';
 export { default as union } from './helpers/union.ts';
 export { default as values } from './helpers/values.ts';
