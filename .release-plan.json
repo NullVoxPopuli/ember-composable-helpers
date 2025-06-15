@@ -2,20 +2,16 @@
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
       "impact": "patch",
-      "oldVersion": "5.2.9",
-      "newVersion": "5.2.10",
+      "oldVersion": "5.2.10",
+      "newVersion": "5.2.11",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-03-05)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.10 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`, `test-app`\n  * [#50](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/50) fix: make `byPath` type generic for various array helpers, update `reject-by` signature ([@charlesfries](https://github.com/charlesfries))\n\n#### :house: Internal\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#46](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/46) feat(addon): update blueprint ([@aklkv](https://github.com/aklkv))\n  * [#49](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/49) fix(addon): setup eslint ([@aklkv](https://github.com/aklkv))\n  * [#47](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/47) fix(addon): add prettier setup ([@aklkv](https://github.com/aklkv))\n\n#### Committers: 2\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n"
+  "description": "## Release (2025-06-15)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.11 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#52](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/52) fix(ember v6+, closure-action): resolve issue with barrel imports (import from '@nullvoxpopuli/ember-composable-helpers') ([@aklkv](https://github.com/aklkv))\n\n#### :house: Internal\n* [#53](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/53) Fix CI ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
