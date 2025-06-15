@@ -1,6 +1,6 @@
 {
   "name": "@nullvoxpopuli/ember-composable-helpers",
-  "version": "5.2.10",
+  "version": "5.2.11",
   "description": "Composable helpers for Ember",
   "keywords": [
     "ember-addon",

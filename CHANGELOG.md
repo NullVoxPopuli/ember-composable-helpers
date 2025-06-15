@@ -1,5 +1,20 @@
 ### Changelog
 
+## Release (2025-06-15)
+
+@nullvoxpopuli/ember-composable-helpers 5.2.11 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#52](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/52) fix(ember v6+, closure-action): resolve issue with barrel imports (import from '@nullvoxpopuli/ember-composable-helpers') ([@aklkv](https://github.com/aklkv))
+
+#### :house: Internal
+* [#53](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/53) Fix CI ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-03-05)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.10 (patch)
