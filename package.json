@@ -1,0 +1,156 @@
+{
+  "name": "@nullvoxpopuli/ember-composable-helpers",
+  "version": "5.3.0",
+  "description": "Composable helpers for Ember",
+  "keywords": [
+    "ember-addon",
+    "helpers",
+    "compose",
+    "group-by",
+    "map-by",
+    "filter-by",
+    "sort-by",
+    "take",
+    "drop",
+    "compute"
+  ],
+  "repository": "https://github.com/NullVoxPopuli/ember-composable-helpers",
+  "license": "MIT",
+  "author": "The Ember Community",
+  "contributors": [
+    "Lauren Tan <arr@sugarpirate.com>",
+    "Marten Schilstra <mail@martenschilstra.nl>"
+  ],
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*"
+      ]
+    }
+  },
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
+    "format": "prettier . --cache --write",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm run format",
+    "lint:format": "prettier . --cache --check",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.9.0",
+    "decorator-transforms": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/eslint-parser": "^7.26.8",
+    "@babel/plugin-transform-typescript": "^7.26.8",
+    "@babel/runtime": "^7.26.9",
+    "@embroider/addon-dev": "^7.1.1",
+    "@eslint/js": "^9.21.0",
+    "@glint/core": "^1.5.2",
+    "@glint/environment-ember-loose": "^1.5.2",
+    "@glint/environment-ember-template-imports": "^1.5.2",
+    "@glint/template": "^1.5.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@tsconfig/ember": "^3.0.9",
+    "@types/rsvp": "^4.0.9",
+    "babel-plugin-ember-template-compilation": "^2.3.0",
+    "concurrently": "^9.1.2",
+    "ember-source": "~5.8.0",
+    "ember-template-lint": "^6.1.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-ember": "^12.5.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.16.1",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.2",
+    "prettier-plugin-ember-template-tag": "^2.0.4",
+    "rollup": "^4.34.9",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.25.0",
+    "webpack": "^5.88.1"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./helpers/append.js": "./dist/_app_/helpers/append.js",
+      "./helpers/call.js": "./dist/_app_/helpers/call.js",
+      "./helpers/chunk.js": "./dist/_app_/helpers/chunk.js",
+      "./helpers/compact.js": "./dist/_app_/helpers/compact.js",
+      "./helpers/compute.js": "./dist/_app_/helpers/compute.js",
+      "./helpers/dec.js": "./dist/_app_/helpers/dec.js",
+      "./helpers/drop.js": "./dist/_app_/helpers/drop.js",
+      "./helpers/entries.js": "./dist/_app_/helpers/entries.js",
+      "./helpers/filter-by.js": "./dist/_app_/helpers/filter-by.js",
+      "./helpers/filter.js": "./dist/_app_/helpers/filter.js",
+      "./helpers/find-by.js": "./dist/_app_/helpers/find-by.js",
+      "./helpers/flatten.js": "./dist/_app_/helpers/flatten.js",
+      "./helpers/from-entries.js": "./dist/_app_/helpers/from-entries.js",
+      "./helpers/group-by.js": "./dist/_app_/helpers/group-by.js",
+      "./helpers/has-next.js": "./dist/_app_/helpers/has-next.js",
+      "./helpers/has-previous.js": "./dist/_app_/helpers/has-previous.js",
+      "./helpers/inc.js": "./dist/_app_/helpers/inc.js",
+      "./helpers/includes.js": "./dist/_app_/helpers/includes.js",
+      "./helpers/intersect.js": "./dist/_app_/helpers/intersect.js",
+      "./helpers/invoke.js": "./dist/_app_/helpers/invoke.js",
+      "./helpers/join.js": "./dist/_app_/helpers/join.js",
+      "./helpers/keys.js": "./dist/_app_/helpers/keys.js",
+      "./helpers/map-by.js": "./dist/_app_/helpers/map-by.js",
+      "./helpers/map.js": "./dist/_app_/helpers/map.js",
+      "./helpers/next.js": "./dist/_app_/helpers/next.js",
+      "./helpers/noop.js": "./dist/_app_/helpers/noop.js",
+      "./helpers/object-at.js": "./dist/_app_/helpers/object-at.js",
+      "./helpers/optional.js": "./dist/_app_/helpers/optional.js",
+      "./helpers/pick.js": "./dist/_app_/helpers/pick.js",
+      "./helpers/pipe-action.js": "./dist/_app_/helpers/pipe-action.js",
+      "./helpers/pipe.js": "./dist/_app_/helpers/pipe.js",
+      "./helpers/previous.js": "./dist/_app_/helpers/previous.js",
+      "./helpers/queue.js": "./dist/_app_/helpers/queue.js",
+      "./helpers/range.js": "./dist/_app_/helpers/range.js",
+      "./helpers/reduce.js": "./dist/_app_/helpers/reduce.js",
+      "./helpers/reject-by.js": "./dist/_app_/helpers/reject-by.js",
+      "./helpers/repeat.js": "./dist/_app_/helpers/repeat.js",
+      "./helpers/reverse.js": "./dist/_app_/helpers/reverse.js",
+      "./helpers/shuffle.js": "./dist/_app_/helpers/shuffle.js",
+      "./helpers/slice.js": "./dist/_app_/helpers/slice.js",
+      "./helpers/sort-by.js": "./dist/_app_/helpers/sort-by.js",
+      "./helpers/take.js": "./dist/_app_/helpers/take.js",
+      "./helpers/toggle-action.js": "./dist/_app_/helpers/toggle-action.js",
+      "./helpers/toggle.js": "./dist/_app_/helpers/toggle.js",
+      "./helpers/union.js": "./dist/_app_/helpers/union.js",
+      "./helpers/values.js": "./dist/_app_/helpers/values.js",
+      "./helpers/without.js": "./dist/_app_/helpers/without.js"
+    }
+  }
+}
