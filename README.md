@@ -47,6 +47,9 @@ To install:
 npm add @nullvoxpopuli/ember-composable-helpers
 ```
 
+If you're using ember-source < 4.5, you may need a [polyfill](https://github.com/ember-polyfills/ember-functions-as-helper-polyfill).
+
+
 To use in an existing project, to replace the original [ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers):
 
 under webpack, configure an alias:

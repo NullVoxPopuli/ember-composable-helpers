@@ -32,9 +32,6 @@ importers:
       decorator-transforms:
         specifier: ^2.3.0
         version: 2.3.0(@babel/core@7.26.9)
-      ember-functions-as-helper-polyfill:
-        specifier: ^2.1.2
-        version: 2.1.2(ember-source@5.8.0(@babel/core@7.26.9)(@glimmer/component@1.1.2(@babel/core@7.26.9))(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.98.0))
     devDependencies:
       '@babel/core':
         specifier: ^7.26.9
@@ -305,7 +302,7 @@ importers:
         version: 1.1.2(@babel/core@7.26.9)
       '@nullvoxpopuli/ember-composable-helpers':
         specifier: workspace:*
-        version: file:ember-composable-helpers(@babel/core@7.26.9)(ember-source@3.28.12(@babel/core@7.26.9))
+        version: link:../ember-composable-helpers
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@5.16.0)
@@ -351,6 +348,9 @@ importers:
       ember-export-application-global:
         specifier: ^2.0.0
         version: 2.0.1
+      ember-functions-as-helper-polyfill:
+        specifier: 2.1.3
+        version: 2.1.3(ember-source@3.28.12(@babel/core@7.26.9))
       ember-load-initializers:
         specifier: ^3.0.1
         version: 3.0.1(ember-source@3.28.12(@babel/core@7.26.9))
@@ -428,7 +428,7 @@ importers:
         version: 1.1.2(@babel/core@7.26.9)
       '@nullvoxpopuli/ember-composable-helpers':
         specifier: workspace:*
-        version: file:ember-composable-helpers(@babel/core@7.26.9)(ember-source@3.28.12(@babel/core@7.26.9))
+        version: link:../ember-composable-helpers
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@5.16.0)
@@ -474,6 +474,9 @@ importers:
       ember-export-application-global:
         specifier: ^2.0.0
         version: 2.0.1
+      ember-functions-as-helper-polyfill:
+        specifier: 2.1.3
+        version: 2.1.3(ember-source@3.28.12(@babel/core@7.26.9))
       ember-load-initializers:
         specifier: ^3.0.1
         version: 3.0.1(ember-source@3.28.12(@babel/core@7.26.9))
@@ -1614,9 +1617,6 @@ packages:
   '@npmcli/promise-spawn@8.0.2':
     resolution: {integrity: sha512-/bNJhjc+o6qL+Dwz/bqfTQClkEO5nTQ1ZEcdCkAQjhkZMHIh22LPG7fNh1enJP1NKWDqYiiABnjFCY7E0zHYtQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
-
-  '@nullvoxpopuli/ember-composable-helpers@file:ember-composable-helpers':
-    resolution: {directory: ember-composable-helpers, type: directory}
 
   '@octokit/auth-token@5.1.2':
     resolution: {integrity: sha512-JcQDsBdg49Yky2w2ld20IHAlwr8d/d8N6NiOXbtuoPCqzbsiJgF633mVUw3x4mo0H5ypataQIX7SFu3yy44Mpw==}
@@ -4183,8 +4183,8 @@ packages:
     resolution: {integrity: sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==}
     engines: {node: '>= 4'}
 
-  ember-functions-as-helper-polyfill@2.1.2:
-    resolution: {integrity: sha512-yvW6xykvZEIYzzwlrC/g9yu6LtLkkj5F+ho6U+BDxN1uREMgoMOZnji7sSILn5ITVpaJ055DPcO+utEFD7IZOA==}
+  ember-functions-as-helper-polyfill@2.1.3:
+    resolution: {integrity: sha512-Hte8jfOmSNzrz/vOchf68CGaBWXN2/5qKgFaylqr9omW2i4Wt9JmaBWRkeR0AJ53N57q3DX2TOb166Taq6QjiA==}
     engines: {node: '>= 14.0.0'}
     peerDependencies:
       ember-source: ^3.25.0 || >=4.0.0
@@ -10560,16 +10560,6 @@ snapshots:
     dependencies:
       which: 5.0.0
 
-  '@nullvoxpopuli/ember-composable-helpers@file:ember-composable-helpers(@babel/core@7.26.9)(ember-source@3.28.12(@babel/core@7.26.9))':
-    dependencies:
-      '@embroider/addon-shim': 1.9.0
-      decorator-transforms: 2.3.0(@babel/core@7.26.9)
-      ember-functions-as-helper-polyfill: 2.1.2(ember-source@3.28.12(@babel/core@7.26.9))
-    transitivePeerDependencies:
-      - '@babel/core'
-      - ember-source
-      - supports-color
-
   '@octokit/auth-token@5.1.2': {}
 
   '@octokit/core@6.1.4':
@@ -14402,21 +14392,12 @@ snapshots:
 
   ember-export-application-global@2.0.1: {}
 
-  ember-functions-as-helper-polyfill@2.1.2(ember-source@3.28.12(@babel/core@7.26.9)):
+  ember-functions-as-helper-polyfill@2.1.3(ember-source@3.28.12(@babel/core@7.26.9)):
     dependencies:
       ember-cli-babel: 7.26.11
       ember-cli-typescript: 5.3.0
       ember-cli-version-checker: 5.1.2
       ember-source: 3.28.12(@babel/core@7.26.9)
-    transitivePeerDependencies:
-      - supports-color
-
-  ember-functions-as-helper-polyfill@2.1.2(ember-source@5.8.0(@babel/core@7.26.9)(@glimmer/component@1.1.2(@babel/core@7.26.9))(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.98.0)):
-    dependencies:
-      ember-cli-babel: 7.26.11
-      ember-cli-typescript: 5.3.0
-      ember-cli-version-checker: 5.1.2
-      ember-source: 5.8.0(@babel/core@7.26.9)(@glimmer/component@1.1.2(@babel/core@7.26.9))(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.98.0)
     transitivePeerDependencies:
       - supports-color
 
