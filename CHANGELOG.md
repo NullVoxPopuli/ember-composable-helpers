@@ -1,5 +1,19 @@
 ### Changelog
 
+## Release (2025-08-22)
+
+* @nullvoxpopuli/ember-composable-helpers 5.3.0 (minor)
+
+#### :rocket: Enhancement
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#55](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/55) [ note for ember-source < 4.5 ] Remove ember-functions-as-helper-polyfill from the library ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* [#56](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/56) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-06-15)
 
 @nullvoxpopuli/ember-composable-helpers 5.2.11 (patch)

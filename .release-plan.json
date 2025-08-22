@@ -1,17 +1,18 @@
 {
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
-      "impact": "patch",
-      "oldVersion": "5.2.10",
-      "newVersion": "5.2.11",
+      "impact": "minor",
+      "oldVersion": "5.2.11",
+      "newVersion": "5.3.0",
+      "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-06-15)\n\n@nullvoxpopuli/ember-composable-helpers 5.2.11 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#52](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/52) fix(ember v6+, closure-action): resolve issue with barrel imports (import from '@nullvoxpopuli/ember-composable-helpers') ([@aklkv](https://github.com/aklkv))\n\n#### :house: Internal\n* [#53](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/53) Fix CI ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-08-22)\n\n* @nullvoxpopuli/ember-composable-helpers 5.3.0 (minor)\n\n#### :rocket: Enhancement\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#55](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/55) [ note for ember-source < 4.5 ] Remove ember-functions-as-helper-polyfill from the library ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* [#56](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/56) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
