@@ -9,7 +9,7 @@ function isIterable(value: unknown) {
 
 // from https://github.com/flexyford/ember-power-select/blob/78a5430c1ac89daf315d0801fd5201e444e82434/addon/components/power-select.ts
 function isArrayable<T>(thing: unknown): thing is EmberArray<T> {
-  return typeof (thing as EmberArray<T>).toArray === 'function';
+  return typeof (thing as EmberArray<T>).slice === 'function';
 }
 
 function isPromiseLike<T>(thing: unknown) {
@@ -76,7 +76,7 @@ function _asArray<T>(maybeArray: unknown): T[] {
         );
       }
       if (isArrayable(content)) {
-        return (content as EmberArray<T>).toArray();
+        return (content as EmberArray<T>).slice();
       } else {
         return _asArray(content);
       }
@@ -87,7 +87,7 @@ function _asArray<T>(maybeArray: unknown): T[] {
       );
     }
     if (isArrayable(maybeArray)) {
-      return (maybeArray as EmberArray<T>).toArray();
+      return (maybeArray as EmberArray<T>).slice();
     }
     if (maybeArray instanceof EmberObject) {
       throw new Error(

@@ -116,8 +116,8 @@ class SortBy<T> {
 
   constructor(...args: [T[] | EmberArray<T>]) {
     let [array] = args;
-    if (typeof (array as EmberArray<T>).toArray === 'function') {
-      array = (array as EmberArray<T>).toArray();
+    if (typeof (array as EmberArray<T>).slice === 'function') {
+      array = (array as EmberArray<T>).slice();
     }
 
     this.array = [...(array as T[])];
