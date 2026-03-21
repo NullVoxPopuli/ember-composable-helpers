@@ -33,9 +33,9 @@ module('Unit | Utility | as-array', function () {
     assert.strictEqual(result.length, 3);
   });
 
-  test('it works for [Object.toArray()]', function (assert) {
+  test('it works for [Object.slice()]', function (assert) {
     let result = asArray({
-      a: 1, toArray() {
+      a: 1, slice() {
         return [1, 2, 3];
       }
     });
@@ -86,10 +86,10 @@ module('Unit | Utility | as-array', function () {
     assert.strictEqual(asArray(item).length, 3);
   });
 
-  test('it works for object-like content in array-proxy-like items [objects toArray]', function (assert) {
+  test('it works for object-like content in array-proxy-like items [objects slice]', function (assert) {
     const item = new Promise((r) => r());
     item.content = {
-      a: 1, toArray() {
+      a: 1, slice() {
         return [1, 2, 3]
       }
     };
@@ -102,8 +102,8 @@ module('Unit | Utility | as-array', function () {
     assert.strictEqual(asArray(item).length, 3);
   });
 
-  test('it works for ember object with toArray property [EmberObject]', function (assert) {
-    const item = EmberObject.extend({ toArray() { return [1, 2, 3] } }).create();
+  test('it works for ember object with slice property [EmberObject]', function (assert) {
+    const item = EmberObject.extend({ slice() { return [1, 2, 3] } }).create();
     assert.strictEqual(asArray(item).length, 3);
   });
 
