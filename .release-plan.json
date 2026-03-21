@@ -1,18 +1,18 @@
 {
   "solution": {
     "@nullvoxpopuli/ember-composable-helpers": {
-      "impact": "minor",
-      "oldVersion": "5.2.11",
-      "newVersion": "5.3.0",
+      "impact": "patch",
+      "oldVersion": "5.3.0",
+      "newVersion": "5.3.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./ember-composable-helpers/package.json"
     }
   },
-  "description": "## Release (2025-08-22)\n\n* @nullvoxpopuli/ember-composable-helpers 5.3.0 (minor)\n\n#### :rocket: Enhancement\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#55](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/55) [ note for ember-source < 4.5 ] Remove ember-functions-as-helper-polyfill from the library ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* [#56](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/56) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2026-03-21)\n\n* @nullvoxpopuli/ember-composable-helpers 5.3.1 (patch)\n\n#### :bug: Bug Fix\n* `@nullvoxpopuli/ember-composable-helpers`\n  * [#65](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/65) replace usage of deprecated `toArray` with `slice` ([@emattias](https://github.com/emattias))\n\n#### :house: Internal\n* [#67](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/67) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- Mattias Hällkvist ([@emattias](https://github.com/emattias))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

@@ -1,5 +1,20 @@
 ### Changelog
 
+## Release (2026-03-21)
+
+* @nullvoxpopuli/ember-composable-helpers 5.3.1 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#65](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/65) replace usage of deprecated `toArray` with `slice` ([@emattias](https://github.com/emattias))
+
+#### :house: Internal
+* [#67](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/67) Update release-plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- Mattias Hällkvist ([@emattias](https://github.com/emattias))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-08-22)
 
 * @nullvoxpopuli/ember-composable-helpers 5.3.0 (minor)
