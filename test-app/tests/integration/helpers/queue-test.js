@@ -36,11 +36,9 @@ module('Integration | Helper | {{queue}}', function(hooks) {
     this.set('value', 0);
     await render(hbs`
       <p>{{this.value}}</p>
-      {{#let (queue this.doAThing this.process this.undoAThing) as |queuedActions|}}
-        <button type="button" {{on "click" (fn queuedActions 3)}}>
-          Calculate
-        </button>
-      {{/let}}
+      <button type="button" {{on "click" (queue this.doAThing (fn this.process 3) this.undoAThing)}}>
+        Calculate
+      </button>
     `);
 
     assert.dom('p').hasText('0', 'precond - should render 0');
