@@ -29,6 +29,25 @@ module('Integration | Helper | {{queue}}', function(hooks) {
     assert.dom('p').hasText('4', 'should render 4');
   });
 
+  test('it can curry a function with the fn helper', async function(assert) {
+    this.doAThing = () => null;
+    this.process = (x) => this.set('value', x * x);
+    this.undoAThing = () => null;
+    this.set('value', 0);
+    await render(hbs`
+      <p>{{this.value}}</p>
+      {{#let (queue this.doAThing this.process this.undoAThing) as |queuedActions|}}
+        <button type="button" {{on "click" (fn queuedActions 3)}}>
+          Calculate
+        </button>
+      {{/let}}
+    `);
+
+    assert.dom('p').hasText('0', 'precond - should render 0');
+    await click('button');
+    assert.dom('p').hasText('9', 'should render 9');
+  });
+
   test('it handles promises', async function(assert) {
     this.set('value', 3);
     this.actions.doAThingThatTakesTime = resolve;
