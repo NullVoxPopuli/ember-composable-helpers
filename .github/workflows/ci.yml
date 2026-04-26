@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Cache dependencies
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
 
   lint:
@@ -20,7 +20,7 @@ jobs:
       CI: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
@@ -32,7 +32,7 @@ jobs:
       CI: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
@@ -45,7 +45,7 @@ jobs:
       CI: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
@@ -58,7 +58,7 @@ jobs:
       CI: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
@@ -86,7 +86,7 @@ jobs:
             # ember-canary,
           ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
