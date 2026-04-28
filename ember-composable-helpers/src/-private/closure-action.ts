@@ -9,7 +9,10 @@ const { __loader } = Ember;
 
 let ClosureActionModule = { ACTION: null };
 
-if (__loader?.registry && 'ember-htmlbars/keywords/closure-action' in __loader.registry) {
+if (
+  __loader?.registry &&
+  'ember-htmlbars/keywords/closure-action' in __loader.registry
+) {
   ClosureActionModule = __loader.require(
     'ember-htmlbars/keywords/closure-action',
   );
