@@ -1,5 +1,20 @@
 ### Changelog
 
+## Release (2026-04-30)
+
+* @nullvoxpopuli/ember-composable-helpers 5.3.2 (patch)
+
+#### :bug: Bug Fix
+* `@nullvoxpopuli/ember-composable-helpers`
+  * [#79](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/79) Guard against undefined registry in Embroider/Vite ([@mweidner037](https://github.com/mweidner037))
+
+#### :house: Internal
+* [#80](https://github.com/NullVoxPopuli/ember-composable-helpers/pull/80) pnpm dlx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+- [@mweidner037](https://github.com/mweidner037)
+
 ## Release (2026-03-21)
 
 * @nullvoxpopuli/ember-composable-helpers 5.3.1 (patch)
