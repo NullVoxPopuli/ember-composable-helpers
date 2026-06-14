@@ -12,7 +12,7 @@ jobs:
     name: Cache dependencies
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
 
   lint:
     name: lint
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
       - run: pnpm lint
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
       - run: pnpm run test
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
       - run: pnpm run test
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
       - run: pnpm run test
@@ -87,7 +87,7 @@ jobs:
           ]
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm build
       - run: pnpm i -f # lazy way to sync injected deps
       - run: node_modules/.bin/ember try:one ${{ matrix.try-scenario }} --skip-cleanup
