@@ -31,7 +31,7 @@ function toExtendable<T>(array: T[]) {
   }
 }
 
-export default function asArray<T>(maybeArray: T[]): T[] {
+export default function asArray<T>(maybeArray: T[] | null | undefined): T[] {
   return toExtendable(_asArray(maybeArray));
 }
 

@@ -5,11 +5,34 @@ import { get } from '@ember/object';
 import isEqual from '../utils/is-equal.ts';
 import asArray from '../utils/as-array.ts';
 
-export function filterBy<T extends object, K extends keyof T>([
-  byPath,
-  value,
-  array,
-]: [K, T[K] | T[] | undefined, T[]]) {
+/**
+ * Filters an array by a property of its items. Accepts two forms:
+ *
+ * - `[path, value, array]`: keeps items whose `path` equals `value`. If `value`
+ *   is a function, it is called with the property and the item is kept when it
+ *   returns truthy.
+ * - `[path, array]`: with no value, keeps items whose `path` is truthy.
+ *
+ * @example
+ * ```hbs
+ * {{#each (filter-by "active" true this.users) as |user|}}...{{/each}}
+ * {{#each (filter-by "active" this.users) as |user|}}...{{/each}}
+ * ```
+ *
+ * @example
+ * ```ts
+ * const items = [{ active: true }, { active: false }];
+ * filterBy(['active', true, items]); // [{ active: true }]
+ * filterBy(['active', items]); // [{ active: true }]
+ * ```
+ */
+export function filterBy<T extends object, K extends keyof T>(
+  positional: [K, T[K] | T[] | undefined, T[]] | [K, T[]],
+) {
+  const args = positional as [K, T[K] | T[] | undefined, T[]];
+  const byPath = args[0];
+  let value = args[1];
+  let array = args[2];
   let isPresent = true;
   if (!isEmberArray(array) && isEmberArray(value)) {
     array = value as T[];
