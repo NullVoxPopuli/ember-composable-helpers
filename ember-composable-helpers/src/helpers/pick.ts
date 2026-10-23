@@ -5,7 +5,7 @@ import type { AnyVoidFn } from '../utils/types';
 export function pick<T extends Event | Record<string, unknown>>([
   path,
   action,
-]: [string, AnyVoidFn]) {
+]: [string, AnyVoidFn?]) {
   return function (obj: T) {
     const value = get(obj, path);
 

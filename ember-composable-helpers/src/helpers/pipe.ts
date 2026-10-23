@@ -9,8 +9,12 @@ export function invokeFunction<T>(acc: T, curr: (...args: unknown[]) => void) {
   return curr(acc);
 }
 
-export function pipe(actions: [...((...args1: unknown[]) => unknown)[]] = []) {
-  return function (...args: [...unknown[]]) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PipeFn = (...args: any[]) => unknown;
+
+export function pipe(actions: PipeFn[] = []) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return function (...args: any[]): any {
     // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
     return actions.reduce<unknown | Promise<unknown>>((acc, curr, idx) => {
       if (idx === 0) {
@@ -22,4 +26,9 @@ export function pipe(actions: [...((...args1: unknown[]) => unknown)[]] = []) {
   };
 }
 
-export default helper(pipe as (actions: unknown[]) => unknown);
+export default helper(
+  pipe as (
+    actions: unknown[],
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ) => (...args: any[]) => any,
+);

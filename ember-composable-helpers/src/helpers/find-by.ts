@@ -6,7 +6,7 @@ import asArray from '../utils/as-array.ts';
 export function findBy<T, K extends keyof T>([byPath, value, array]: [
   K,
   T[K],
-  T[],
+  T[] | null | undefined,
 ]) {
   if (isEmpty(byPath)) {
     return undefined;
